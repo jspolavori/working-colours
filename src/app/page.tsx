@@ -18,68 +18,63 @@ const services = [
     description:
       'Clean, consistent finishes for every room. Walls, ceilings, doors, trims, and more.',
     href: '/services/interior-painting',
-    icon: '🏠',
+    icon: '',
   },
   {
     title: 'Exterior House Painting',
     description:
       'Protect and refresh the outside of your home. Quality materials for the coastal climate.',
     href: '/services/exterior-painting',
-    icon: '🏡',
+    icon: '',
   },
   {
     title: 'Timber Staining & Restoration',
     description:
       'Revive weathered, grey, or peeling timber. Fences, cladding, window frames, and more.',
     href: '/services/timber-staining',
-    icon: '🪵',
+    icon: '',
   },
   {
     title: 'Deck Staining & Refinishing',
     description:
       'Sand, prepare, and stain for lasting protection and a beautiful finish.',
     href: '/services/deck-staining',
-    icon: '🪜',
+    icon: '',
   },
   {
     title: 'Doors, Trims & Windows',
     description:
       'Fresh paint on doors, window frames, and louvers makes a significant difference.',
     href: '/services/doors-trims-windows',
-    icon: '🚪',
+    icon: '',
   },
   {
     title: 'Residential Repaints',
     description:
       'From a single wall to a full house refresh. We assess honestly and quote accordingly.',
     href: '/services/residential-repaints',
-    icon: '🖌️',
+    icon: '',
   },
 ];
 
 const whyPoints = [
   {
-    icon: '🏠',
     title: 'Respect for your home and family',
     body: 'We treat your property like our own. Drop sheets down, furniture protected, mess contained.',
   },
   {
-    icon: '📋',
     title: 'Clear quotes, no surprises',
     body: 'Detailed quote before any work begins. No hidden charges, no scope creep.',
   },
   {
-    icon: '✨',
     title: 'Premium finishes that last',
     body: 'Proper preparation is what separates a paint job that lasts from one that starts peeling in two years.',
   },
   {
-    icon: '⏰',
     title: 'On time and reliable',
     body: 'We show up when we say we will. We finish when we say we will.',
   },
   {
-    icon: '📍',
     title: 'Local and experienced',
     body: 'Northern Beaches specialists. We know the local conditions, the coastal environment, and what it takes.',
   },
@@ -237,7 +232,7 @@ export default function HomePage() {
 
           {/* Trust bar */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-blue-200/80">
-            <span>⭐ 5.0 Google Rating</span>
+            <span>5.0 Google Rating</span>
             <span className="hidden sm:inline text-blue-800">·</span>
             <span>Local Northern Beaches Team</span>
             <span className="hidden sm:inline text-blue-800">·</span>
@@ -259,7 +254,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-gray-200">
             {[
               { stat: '500+', label: 'Homes Painted' },
-              { stat: '5.0 ⭐', label: 'Google Rating' },
+              { stat: '5.0', label: 'Google Rating' },
               { stat: '10+', label: 'Years Experience' },
               { stat: '100%', label: 'Northern Beaches Locals' },
             ].map((item) => (
@@ -314,7 +309,11 @@ export default function HomePage() {
                 key={point.title}
                 className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex gap-5"
               >
-                <div className="text-3xl flex-shrink-0 mt-0.5">{point.icon}</div>
+                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg className="w-4 h-4 text-[#0066CC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
                 <div>
                   <h3 className="font-bold text-[#1a1a2e] text-lg mb-2">{point.title}</h3>
                   <p className="text-[#6b7280] leading-relaxed">{point.body}</p>
@@ -467,7 +466,7 @@ export default function HomePage() {
           </div>
           <div className="text-center">
             <span className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2 text-sm font-semibold text-yellow-800">
-              ⭐ 5.0 — Based on Google Reviews
+              5.0 — Based on Google Reviews
             </span>
           </div>
         </div>
