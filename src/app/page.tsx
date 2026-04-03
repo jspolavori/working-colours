@@ -171,25 +171,18 @@ export default function HomePage() {
       {/* ─── HERO ─── */}
       <section
         className="relative min-h-screen flex flex-col justify-center text-white overflow-hidden"
-        style={{ background: '#1a1a2e' }}
       >
-        {/* Diagonal stripe texture overlay */}
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage:
-              'repeating-linear-gradient(45deg, #ffffff 0, #ffffff 1px, transparent 0, transparent 50%)',
-            backgroundSize: '20px 20px',
-          }}
+        {/* Video background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/hero-bg.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
-        {/* Blue gradient accent */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            background:
-              'radial-gradient(ellipse at 30% 50%, #0066CC 0%, transparent 60%)',
-          }}
-        />
+        {/* Dark overlay so text remains readable */}
+        <div className="absolute inset-0 bg-[#1a1a2e]/65" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm text-blue-200 mb-8">
