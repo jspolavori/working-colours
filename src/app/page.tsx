@@ -465,6 +465,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── GALLERY ─── */}
+      <section className="py-20 px-4 bg-[#f8f9fa]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4">Our Work</h2>
+            <p className="text-[#6b7280] max-w-xl mx-auto">
+              A selection of completed jobs across Sydney&apos;s Northern Beaches.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { src: '/gallery/job-1.jpg', alt: 'Palm Beach waterfront property — timber staining and deck restoration' },
+              { src: '/gallery/job-2.jpg', alt: 'Timber stained garage facade and screening — Palm Beach' },
+              { src: '/gallery/job-3.jpg', alt: 'Timber stained garage and feature screening — Northern Beaches' },
+              { src: '/gallery/job-4.jpg', alt: 'Stained timber louvers and shutters — finished result' },
+              { src: '/gallery/job-5.jpg', alt: 'Deck staining and exterior painting — Northern Beaches home' },
+              { src: '/gallery/job-6.jpg', alt: 'Freshly painted white window frames — gloss finish' },
+            ].map((img) => (
+              <div key={img.src} className="relative overflow-hidden rounded-xl aspect-[4/3] bg-gray-200 group">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── AREAS WE SERVICE ─── */}
       <section className="py-20 px-4 bg-[#f8f9fa]">
         <div className="max-w-5xl mx-auto text-center">
