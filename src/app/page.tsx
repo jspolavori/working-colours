@@ -476,12 +476,12 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { src: '/gallery/job-1.jpg', alt: 'Palm Beach waterfront property — timber staining and deck restoration' },
-              { src: '/gallery/job-2.jpg', alt: 'Timber stained garage facade and screening — Palm Beach' },
-              { src: '/gallery/job-3.jpg', alt: 'Timber stained garage and feature screening — Northern Beaches' },
-              { src: '/gallery/job-4.jpg', alt: 'Stained timber louvers and shutters — finished result' },
-              { src: '/gallery/job-5.jpg', alt: 'Deck staining and exterior painting — Northern Beaches home' },
-              { src: '/gallery/job-6.jpg', alt: 'Freshly painted white window frames — gloss finish' },
+              { src: '/gallery/job-1.jpg', alt: 'Large freshly stained deck with white timber railing — Northern Beaches' },
+              { src: '/gallery/job-2.jpg', alt: 'Freshly oiled timber sun lounger on waterfront dock — Pittwater' },
+              { src: '/gallery/job-3.jpg', alt: 'Stained timber louvers with water and palm tree view — Northern Beaches' },
+              { src: '/gallery/job-4.jpg', alt: 'Interior painting — fresh blue wall with white trims and window frames' },
+              { src: '/gallery/job-5.jpg', alt: 'Stained and oiled timber bedroom built-ins — interior timber restoration' },
+              { src: '/gallery/job-6.jpg', alt: 'White gloss window frames and trims with ocean view — stain to gloss conversion' },
             ].map((img) => (
               <div key={img.src} className="relative overflow-hidden rounded-xl aspect-[4/3] bg-gray-200 group">
                 <img
