@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'House Painter Northern Beaches Sydney | Working Colours',
   description: "Premium residential painting on Sydney's Northern Beaches. Interior, exterior, timber staining, deck staining and more. Get a free quote today.",
-  metadataBase: new URL('https://workingcolours.com.au'),
+  metadataBase: new URL('https://wcpainting.com.au'),
   openGraph: {
     siteName: 'Working Colours Painting Services',
     locale: 'en_AU',
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://workingcolours.com.au',
+  '@id': 'https://wcpainting.com.au',
   name: 'Working Colours Painting Services',
-  url: 'https://workingcolours.com.au',
+  url: 'https://wcpainting.com.au',
   telephone: '+61434030222',
   priceRange: '$$',
   description:
