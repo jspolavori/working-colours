@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
       </body>
     </html>

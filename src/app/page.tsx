@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import HeroForm from '@/components/HeroForm';
 import ServiceCard from '@/components/ServiceCard';
 import SuburbCard from '@/components/SuburbCard';
 import ReviewCard from '@/components/ReviewCard';
@@ -206,20 +207,23 @@ export default function HomePage() {
             results, a tidy worksite, and a painter they can actually trust.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Link
-              href="/contact"
-              className="bg-white text-[#1a1a2e] font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-200 text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-            >
-              Get a Free Quote
-            </Link>
+          {/* Mini hero form — above the fold capture */}
+          <HeroForm />
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8 mt-2">
             <a
               href="https://wa.me/61434030222"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all duration-200 text-base"
+              className="border-2 border-white/60 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all duration-200 text-sm"
             >
               Message Us on WhatsApp
+            </a>
+            <a
+              href="tel:+61434030222"
+              className="border-2 border-white/30 text-white/80 font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-all duration-200 text-sm"
+            >
+              Call 0434 030 222
             </a>
           </div>
 
