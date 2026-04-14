@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { gtagConversion } from '@/lib/gtag';
 
 export default function HeroForm() {
   const [form, setForm] = useState({ name: '', phone: '', suburb: '' });
@@ -18,6 +19,8 @@ export default function HeroForm() {
       form.phone ? `Phone: ${form.phone}` : '',
       form.suburb ? `Suburb: ${form.suburb}` : '',
     ].filter(Boolean).join('\n');
+    gtagConversion('form_submit');
+    gtagConversion('whatsapp_click');
     window.open(`https://wa.me/61434030222?text=${encodeURIComponent(text)}`, '_blank');
     setSent(true);
   };
