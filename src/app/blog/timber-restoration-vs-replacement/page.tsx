@@ -114,7 +114,9 @@ export default function TimberRestorationArticlePage() {
           <div className="flex flex-wrap gap-3">
             <Link href="/services/timber-staining" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Timber Staining Service</Link>
             <Link href="/services/deck-staining" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Deck Staining Service</Link>
+            <Link href="/services/doors-trims-windows" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Doors, Trims &amp; Windows</Link>
             <Link href="/blog/signs-deck-needs-restaining-northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Signs Your Deck Needs Restaining</Link>
+            <Link href="/contact" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Get a Free Quote</Link>
           </div>
         </div>
       </section>
