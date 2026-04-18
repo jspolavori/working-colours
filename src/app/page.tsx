@@ -349,69 +349,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── POSITIONING — NOT THE CHEAPEST ─── */}
-      <section className="py-20 px-4 bg-[#1a1a2e] text-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            Not the cheapest — and proud of it.
-          </h2>
-          <p className="text-gray-300 text-lg text-center max-w-2xl mx-auto mb-14 leading-relaxed">
-            There are plenty of painters in Sydney who will give you a low price. What they
-            won&apos;t always give you is proper surface preparation, quality products, a clean
-            worksite, or a finish that holds up. At Working Colours, we do the job properly.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white/5 rounded-xl p-7 border border-white/10">
-              <h3 className="text-red-400 font-semibold text-lg mb-5">If you&apos;re looking for:</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 font-bold mt-0.5 flex-shrink-0">✗</span>
-                  The lowest quote on the street
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 font-bold mt-0.5 flex-shrink-0">✗</span>
-                  A painter who starts tomorrow no matter what
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 font-bold mt-0.5 flex-shrink-0">✗</span>
-                  Someone to rush the prep and get in and out fast
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white/5 rounded-xl p-7 border border-white/10">
-              <h3 className="text-green-400 font-semibold text-lg mb-5">If you want:</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-0.5 flex-shrink-0">✓</span>
-                  A detailed quote and honest advice
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-0.5 flex-shrink-0">✓</span>
-                  A team that respects your home
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-0.5 flex-shrink-0">✓</span>
-                  Quality materials and a lasting finish
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-0.5 flex-shrink-0">✓</span>
-                  No mess, no drama, no surprises
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center">
-            <p className="text-gray-300 text-lg mb-6">We&apos;d love to hear from you.</p>
-            <Link
-              href="/contact"
-              className="bg-[#FF6B35] hover:bg-orange-500 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-base shadow-lg"
-            >
-              Get a Free Quote
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ─── HOW IT WORKS ─── */}
       <section className="py-20 px-4 bg-[#f8f9fa]">
         <div className="max-w-5xl mx-auto">
