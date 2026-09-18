@@ -55,6 +55,10 @@ export default function ContactPage() {
     const params = new URLSearchParams(window.location.search);
     const result = params.get('enquiry');
     if (result === 'sent') {
+      // Reads a browser-only value (the URL) after mount so the server-
+      // rendered and initial client render stay identical (no hydration
+      // mismatch) — the one-time update here is deliberate, not a loop.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStatus('success');
       setStatusMessage("Thanks — your enquiry has been sent to Working Colours. We'll be in touch soon.");
     } else if (result === 'error') {
