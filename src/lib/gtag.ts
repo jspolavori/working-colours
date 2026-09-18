@@ -7,7 +7,18 @@ declare global {
 
 const AW_ID = 'AW-16510360679';
 
-export function gtagConversion(eventName: 'phone_call' | 'whatsapp_click' | 'form_submit') {
+export type ConversionEvent =
+  | 'phone_call'
+  | 'whatsapp_click'
+  // A visitor opened WhatsApp/their email client with pre-filled details —
+  // a handoff, not a confirmed enquiry (nothing has actually been sent yet).
+  | 'form_submit'
+  // The direct enquiry form's server accepted the enquiry for delivery.
+  // Distinct from the handoff events above — this is the only event that
+  // represents a confirmed submission.
+  | 'enquiry_submitted';
+
+export function gtagConversion(eventName: ConversionEvent) {
   if (typeof window === 'undefined') return;
 
   // Push to dataLayer for GTM triggers

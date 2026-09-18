@@ -5,6 +5,7 @@ import { headers } from 'next/headers';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { BUSINESS } from '@/lib/business';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -49,21 +50,17 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://www.wcpainting.com.au',
-  name: 'Working Colours Painting Services',
-  url: 'https://www.wcpainting.com.au',
-  telephone: '+61434030222',
-  email: 'info@wcpainting.com.au',
+  '@id': BUSINESS.siteUrl,
+  name: BUSINESS.name,
+  url: BUSINESS.siteUrl,
+  telephone: BUSINESS.phoneTel,
+  email: BUSINESS.schemaEmail,
   priceRange: '$$',
   description:
     "Premium residential painting services across Sydney's Northern Beaches. Interior, exterior, timber staining, deck staining and more. 18 years experience.",
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '58-60 Park St',
-    addressLocality: 'Narrabeen',
-    addressRegion: 'NSW',
-    postalCode: '2101',
-    addressCountry: 'AU',
+    ...BUSINESS.address,
   },
   geo: {
     '@type': 'GeoCoordinates',
@@ -76,12 +73,20 @@ const localBusinessSchema = {
     'Avalon', 'Palm Beach', 'Freshwater', 'Manly', 'Balgowlah', 'Seaforth',
     'Frenchs Forest', 'Belrose', 'Brookvale', 'Cromer',
   ],
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '07:00',
-    closes: '17:00',
-  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: BUSINESS.hours.weekday.days,
+      opens: BUSINESS.hours.weekday.opens,
+      closes: BUSINESS.hours.weekday.closes,
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: BUSINESS.hours.saturday.days,
+      opens: BUSINESS.hours.saturday.opens,
+      closes: BUSINESS.hours.saturday.closes,
+    },
+  ],
   serviceType: 'Residential Painting',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

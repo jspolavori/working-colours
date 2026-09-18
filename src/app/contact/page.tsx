@@ -1,32 +1,135 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { gtagConversion } from '@/lib/gtag';
+import { BUSINESS, whatsappHref } from '@/lib/business';
+import {
+  EnquiryFieldErrors,
+  FIELD_LIMITS,
+  SERVICE_OPTIONS,
+  serviceLabel,
+  validateEnquiry,
+} from '@/lib/enquiry';
+
+type Status = 'idle' | 'submitting' | 'success' | 'error';
+
+const initialForm = {
+  name: '',
+  phone: '',
+  email: '',
+  suburb: '',
+  service: '',
+  message: '',
+};
+
+function buildSummary(form: typeof initialForm, greeting: string) {
+  return [
+    greeting,
+    `Name: ${form.name}`,
+    form.phone ? `Phone: ${form.phone}` : '',
+    form.email ? `Email: ${form.email}` : '',
+    form.suburb ? `Suburb: ${form.suburb}` : '',
+    form.service ? `Service: ${serviceLabel(form.service)}` : '',
+    form.message ? `Details: ${form.message}` : '',
+  ].filter(Boolean).join('\n');
+}
+
+function buildMailto(form: typeof initialForm) {
+  const subject = `Website enquiry: ${form.name || 'New enquiry'}`;
+  const body = buildSummary(form, `Hi, I'd like a quote from Working Colours.`);
+  return `mailto:${BUSINESS.publicEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: '',
-    phone: '',
-    suburb: '',
-    service: '',
-    message: '',
-  });
+  const [form, setForm] = useState(initialForm);
+  const [fieldErrors, setFieldErrors] = useState<EnquiryFieldErrors>({});
+  const [status, setStatus] = useState<Status>('idle');
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState('');
+  const [startedAt] = useState(() => Date.now());
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  // Handles the no-JS fallback: if the browser submitted the form
+  // natively (see the form's method/action below), /api/enquiry
+  // redirects back here with a status flag instead of raw JSON.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const result = params.get('enquiry');
+    if (result === 'sent') {
+      setStatus('success');
+      setStatusMessage("Thanks — your enquiry has been sent to Working Colours. We'll be in touch soon.");
+    } else if (result === 'error') {
+      setStatus('error');
+      setStatusMessage(
+        `Something went wrong sending your enquiry. Please call ${BUSINESS.phoneDisplay} or message us on WhatsApp instead.`,
+      );
+    }
+    if (result) {
+      params.delete('enquiry');
+      const clean = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+      window.history.replaceState({}, '', clean);
+    }
+  }, []);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const text = [
-      `Hi! I'd like a quote from Working Colours.`,
-      `Name: ${form.name}`,
-      form.phone ? `Phone: ${form.phone}` : '',
-      form.suburb ? `Suburb: ${form.suburb}` : '',
-      form.service ? `Service: ${form.service}` : '',
-      form.message ? `Details: ${form.message}` : '',
-    ].filter(Boolean).join('\n');
-    window.open(`https://wa.me/61434030222?text=${encodeURIComponent(text)}`, '_blank');
+
+    const { ok, errors } = validateEnquiry(form);
+    setFieldErrors(errors);
+    if (!ok) {
+      setStatus('error');
+      setStatusMessage('Please check the highlighted fields below.');
+      return;
+    }
+
+    setStatus('submitting');
+    setStatusMessage(null);
+
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, honeypot, startedAt }),
+      });
+      const data = await res.json();
+
+      if (res.ok && data.ok) {
+        setStatus('success');
+        setStatusMessage(
+          "Thanks — your enquiry has been sent to Working Colours. We'll be in touch soon.",
+        );
+        gtagConversion('enquiry_submitted');
+        setForm(initialForm);
+        setFieldErrors({});
+        return;
+      }
+
+      if (data.fields) setFieldErrors(data.fields);
+      setStatus('error');
+      setStatusMessage(
+        data.message ??
+          `Something went wrong sending your enquiry. Please call ${BUSINESS.phoneDisplay} or message us on WhatsApp instead.`,
+      );
+    } catch {
+      setStatus('error');
+      setStatusMessage(
+        `We couldn't reach our server. Please check your connection, or call ${BUSINESS.phoneDisplay} or message us on WhatsApp instead.`,
+      );
+    }
   };
+
+  const handleWhatsApp = () => {
+    gtagConversion('whatsapp_click');
+    const text = buildSummary(form, `Hi! I'd like a quote from Working Colours.`);
+    window.open(whatsappHref(text), '_blank', 'noopener,noreferrer');
+  };
+
+  const isSubmitting = status === 'submitting';
 
   return (
     <>
@@ -34,7 +137,8 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get Your Free Quote</h1>
           <p className="text-blue-100 text-lg">
-            Fill in the form below and we&apos;ll send your details straight to our WhatsApp — we&apos;ll be in touch to arrange a site visit.
+            Tell us about your project below and we&apos;ll send it straight to Working Colours —
+            or open WhatsApp / your email app if you&apos;d rather send it that way.
           </p>
         </div>
       </section>
@@ -42,10 +146,54 @@ export default function ContactPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
 
-          {/* Form */}
+          {/* Direct enquiry form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">Tell us about your project</h2>
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              // Fallback for the rare case JavaScript fails: instead of a
+              // default GET submission (which would append these details
+              // to the page URL), this posts to the real enquiry endpoint,
+              // which redirects back here with a status flag — see the
+              // useEffect above and src/app/api/enquiry/route.ts.
+              method="post"
+              action="/api/enquiry"
+              className="space-y-5"
+            >
+              <h2 className="text-2xl font-bold text-[#1a1a2e] mb-2">Tell us about your project</h2>
+              <p className="text-sm text-gray-500 mb-6">
+                This sends your enquiry directly to Working Colours by email — it does not open
+                WhatsApp or your email app.
+              </p>
+
+              <input type="hidden" name="startedAt" value={startedAt} />
+
+              {/* Honeypot — hidden from real visitors, left for bots that auto-fill every field */}
+              <div aria-hidden="true" className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden">
+                <label htmlFor="company-website">Leave this field blank</label>
+                <input
+                  id="company-website"
+                  type="text"
+                  name="companyWebsite"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
+              <div role="status" aria-live="polite">
+                {status === 'success' && (
+                  <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg px-4 py-3 text-sm">
+                    {statusMessage}
+                  </div>
+                )}
+                {status === 'error' && statusMessage && (
+                  <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg px-4 py-3 text-sm">
+                    {statusMessage}
+                  </div>
+                )}
+              </div>
 
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">Full name *</label>
@@ -53,164 +201,164 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
+                  autoComplete="name"
+                  maxLength={FIELD_LIMITS.name}
                   required
+                  aria-invalid={!!fieldErrors.name}
+                  aria-describedby={fieldErrors.name ? 'name-error' : undefined}
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Your name"
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
                 />
+                {fieldErrors.name && (
+                  <p id="name-error" className="text-sm text-red-600 mt-1">{fieldErrors.name}</p>
+                )}
               </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">Phone number *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={form.phone}
-                  onChange={handleChange}
-                  placeholder="04XX XXX XXX"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">Phone number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    maxLength={FIELD_LIMITS.phone}
+                    aria-invalid={!!fieldErrors.contact}
+                    aria-describedby={fieldErrors.contact ? 'contact-error' : undefined}
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="04XX XXX XXX"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">Email address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autoComplete="email"
+                    maxLength={FIELD_LIMITS.email}
+                    aria-invalid={!!fieldErrors.contact}
+                    aria-describedby={fieldErrors.contact ? 'contact-error' : undefined}
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="you@example.com"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                  />
+                </div>
               </div>
+              <p className="text-xs text-gray-500 -mt-3">Provide a phone number or an email address (at least one).</p>
+              {fieldErrors.contact && (
+                <p id="contact-error" className="text-sm text-red-600 -mt-3">{fieldErrors.contact}</p>
+              )}
 
               <div>
-                <label htmlFor="suburb" className="block text-sm font-semibold text-gray-700 mb-1">Your suburb</label>
+                <label htmlFor="suburb" className="block text-sm font-semibold text-gray-700 mb-1">Your suburb *</label>
                 <input
                   type="text"
                   id="suburb"
                   name="suburb"
+                  autoComplete="address-level2"
+                  maxLength={FIELD_LIMITS.suburb}
+                  required
+                  aria-invalid={!!fieldErrors.suburb}
+                  aria-describedby={fieldErrors.suburb ? 'suburb-error' : undefined}
                   value={form.suburb}
                   onChange={handleChange}
                   placeholder="e.g. Dee Why"
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
                 />
+                {fieldErrors.suburb && (
+                  <p id="suburb-error" className="text-sm text-red-600 mt-1">{fieldErrors.suburb}</p>
+                )}
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-1">Service required</label>
+                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-1">Service required *</label>
                 <select
                   id="service"
                   name="service"
+                  autoComplete="off"
+                  required
+                  aria-invalid={!!fieldErrors.service}
+                  aria-describedby={fieldErrors.service ? 'service-error' : undefined}
                   value={form.service}
                   onChange={handleChange}
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
                 >
                   <option value="">Select a service...</option>
-                  <option value="interior-painting">Interior House Painting</option>
-                  <option value="exterior-painting">Exterior House Painting</option>
-                  <option value="timber-staining">Timber Staining and Restoration</option>
-                  <option value="deck-staining">Deck Staining and Refinishing</option>
-                  <option value="doors-trims-windows">Doors, Trims, Windows and Louvers</option>
-                  <option value="residential-repaints">Residential Repaints and Touch-Ups</option>
-                  <option value="not-sure">Not sure yet</option>
+                  {SERVICE_OPTIONS.map((s) => (
+                    <option key={s.value} value={s.value}>{s.label}</option>
+                  ))}
                 </select>
+                {fieldErrors.service && (
+                  <p id="service-error" className="text-sm text-red-600 mt-1">{fieldErrors.service}</p>
+                )}
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">Tell us more</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">Tell us more *</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
+                  maxLength={FIELD_LIMITS.message}
+                  required
+                  aria-invalid={!!fieldErrors.message}
+                  aria-describedby={fieldErrors.message ? 'message-error' : undefined}
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Briefly describe what you need done, the size of the job, and any other relevant details..."
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition resize-none"
                 />
+                {fieldErrors.message && (
+                  <p id="message-error" className="text-sm text-red-600 mt-1">{fieldErrors.message}</p>
+                )}
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors text-base flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+                className="w-full bg-[#0066CC] hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-lg transition-colors text-base flex items-center justify-center gap-2"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Send via WhatsApp
+                {isSubmitting ? 'Sending…' : 'Send Enquiry'}
               </button>
-              <p className="text-xs text-gray-500 text-center">Opens WhatsApp with your details pre-filled. We typically respond within a few hours.</p>
+              <p className="text-xs text-gray-500 text-center">
+                Sends your enquiry directly to Working Colours. We typically respond within a few hours.
+              </p>
             </form>
-          </div>
 
-          {/* Email fallback form */}
-          <div className="lg:col-span-3 mt-10 pt-10 border-t border-gray-200">
-            <h2 className="text-2xl font-bold text-[#1a1a2e] mb-2">Or send us an email</h2>
-            <p className="text-sm text-gray-500 mb-6">Prefer email? Fill in the form below — it will open your email client with your details pre-filled.</p>
-            <form
-              action="mailto:workingcolours@gmail.com"
-              method="POST"
-              encType="text/plain"
-              className="space-y-5"
-            >
-              <div>
-                <label htmlFor="email-name" className="block text-sm font-semibold text-gray-700 mb-1">Full name *</label>
-                <input
-                  type="text"
-                  id="email-name"
-                  name="Name"
-                  required
-                  placeholder="Your name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label htmlFor="email-phone" className="block text-sm font-semibold text-gray-700 mb-1">Phone number *</label>
-                <input
-                  type="tel"
-                  id="email-phone"
-                  name="Phone"
-                  required
-                  placeholder="04XX XXX XXX"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label htmlFor="email-suburb" className="block text-sm font-semibold text-gray-700 mb-1">Your suburb</label>
-                <input
-                  type="text"
-                  id="email-suburb"
-                  name="Suburb"
-                  placeholder="e.g. Dee Why"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label htmlFor="email-service" className="block text-sm font-semibold text-gray-700 mb-1">Service required</label>
-                <select
-                  id="email-service"
-                  name="Service"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+            {/* Alternative ways to send the same details */}
+            <div className="mt-10 pt-8 border-t border-gray-200">
+              <h2 className="text-lg font-bold text-[#1a1a2e] mb-1">Prefer WhatsApp or email?</h2>
+              <p className="text-sm text-gray-500 mb-4">
+                These use whatever you&apos;ve typed above, but open a separate app — you still need to
+                press Send there yourself.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  type="button"
+                  onClick={handleWhatsApp}
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm flex items-center justify-center gap-2"
                 >
-                  <option value="">Select a service...</option>
-                  <option value="Interior House Painting">Interior House Painting</option>
-                  <option value="Exterior House Painting">Exterior House Painting</option>
-                  <option value="Timber Staining and Restoration">Timber Staining and Restoration</option>
-                  <option value="Deck Staining and Refinishing">Deck Staining and Refinishing</option>
-                  <option value="Doors, Trims, Windows and Louvers">Doors, Trims, Windows and Louvers</option>
-                  <option value="Residential Repaints and Touch-Ups">Residential Repaints and Touch-Ups</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
+                  Open WhatsApp with these details
+                </button>
+                <a
+                  href={buildMailto(form)}
+                  className="flex-1 border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors text-sm flex items-center justify-center gap-2"
+                >
+                  Open email with these details
+                </a>
               </div>
-              <div>
-                <label htmlFor="email-message" className="block text-sm font-semibold text-gray-700 mb-1">Tell us more</label>
-                <textarea
-                  id="email-message"
-                  name="Message"
-                  rows={5}
-                  placeholder="Briefly describe what you need done, the size of the job, and any other relevant details..."
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#0066CC] hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors text-base"
-              >
-                Send Email
-              </button>
-              <p className="text-xs text-gray-500 text-center">Opens your email client with your details pre-filled.</p>
-            </form>
+              <p className="text-xs text-gray-500 text-center mt-2">
+                Open WhatsApp with your project details, then press Send to message us.
+              </p>
+            </div>
           </div>
 
           {/* Contact Info */}
@@ -222,7 +370,13 @@ export default function ContactPage() {
                   <span className="text-2xl">📞</span>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Phone</p>
-                    <a href="tel:+61434030222" className="text-lg font-bold text-blue-600 hover:underline">0434 030 222</a>
+                    <a
+                      href={`tel:${BUSINESS.phoneTel}`}
+                      onClick={() => gtagConversion('phone_call')}
+                      className="text-lg font-bold text-blue-600 hover:underline"
+                    >
+                      {BUSINESS.phoneDisplay}
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -230,9 +384,10 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm text-gray-500 font-medium">WhatsApp</p>
                     <a
-                      href="https://wa.me/61434030222"
+                      href={whatsappHref("Hi! I'd like a quote from Working Colours.")}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => gtagConversion('whatsapp_click')}
                       className="text-lg font-bold text-green-600 hover:underline"
                     >
                       Message us on WhatsApp
@@ -246,7 +401,7 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Service area</p>
-                    <p className="font-semibold text-gray-800">Sydney&apos;s Northern Beaches, NSW</p>
+                    <p className="font-semibold text-gray-800">{BUSINESS.serviceArea}</p>
                   </div>
                 </div>
               </div>
@@ -270,10 +425,12 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-green-50 rounded-xl p-6 border border-green-100">
+            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
               <h3 className="font-bold text-[#1a1a2e] mb-2">What happens next?</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Your details land straight in our WhatsApp. We&apos;ll reply quickly to arrange a site visit at a time that suits you — then send a detailed, itemised quote. No vague estimates, no surprises.
+                Submitting the form above sends your enquiry directly to Working Colours by email.
+                We&apos;ll reply as soon as we can to arrange a site visit — then send a detailed,
+                itemised quote. No vague estimates, no surprises.
               </p>
             </div>
           </div>

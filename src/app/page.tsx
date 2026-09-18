@@ -6,6 +6,7 @@ import ServiceCard from '@/components/ServiceCard';
 import SuburbCard from '@/components/SuburbCard';
 import ReviewCard from '@/components/ReviewCard';
 import FAQSection from '@/components/FAQSection';
+import { BUSINESS } from '@/lib/business';
 
 export const metadata: Metadata = {
   title: "House Painters Northern Beaches | Working Colours",
@@ -333,9 +334,20 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center">
-            <span className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2 text-sm font-semibold text-yellow-800">
-              5.0 — Based on Google Reviews
-            </span>
+            {BUSINESS.googleReviewsUrl ? (
+              <a
+                href={BUSINESS.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2 text-sm font-semibold text-yellow-800 hover:bg-yellow-100 transition-colors"
+              >
+                Read our Google reviews
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2 text-sm font-semibold text-yellow-800">
+                5.0 — Based on Google Reviews
+              </span>
+            )}
           </div>
         </div>
       </section>

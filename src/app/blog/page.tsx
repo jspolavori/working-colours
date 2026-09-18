@@ -29,12 +29,6 @@ export const metadata: Metadata = {
 
 const articles = [
   {
-    title: 'How Much Does It Cost to Paint a House in Sydney in 2025?',
-    excerpt: 'Updated 2025 guide to house painting costs — what to budget for interior, exterior, and full repaints on Sydney\'s Northern Beaches.',
-    href: '/blog/cost-paint-house-sydney-2025',
-    category: 'Cost & Budgeting',
-  },
-  {
     title: 'How to Choose a Painter on the Northern Beaches — 5 Things to Check',
     excerpt: 'Five things to check before hiring a painter on the Northern Beaches — from licensing to preparation approach. Advice from 18 years in the trade.',
     href: '/blog/how-choose-painter-northern-beaches',

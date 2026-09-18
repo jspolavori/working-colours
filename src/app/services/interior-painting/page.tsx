@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: 'What sheen level should I choose for walls?',
-    answer: 'For most living areas, bedrooms, and hallways, low-sheen is the standard recommendation. It hides surface imperfections better than flat and is easier to clean than flat paint. High-traffic areas and wet rooms may benefit from a more washable finish.',
+    answer: 'Low-sheen paint is a practical choice for many interior walls because it balances appearance and washability. It generally shows imperfections less than gloss finishes. Flat or matt finishes can help conceal surface imperfections, while washability depends on the specific product. High-traffic areas and wet rooms may benefit from a more washable finish — ask us about the right product for each room.',
   },
   {
     question: 'Can you paint just one room?',

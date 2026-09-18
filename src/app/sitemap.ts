@@ -57,7 +57,6 @@ const blogPosts = [
   'how-to-choose-a-painter-sydney',
   'interior-painting-mistakes-to-avoid',
   // New blog posts
-  'cost-paint-house-sydney-2025',
   'how-choose-painter-northern-beaches',
   'exterior-paint-life-coastal-environment',
   'deck-staining-vs-painting',

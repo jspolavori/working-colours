@@ -215,7 +215,7 @@ export default function HowChoosePainterNorthernBeachesPage() {
           <h2 className="text-xl font-bold text-[#1a1a2e] mb-6">Related articles and services</h2>
           <div className="flex flex-wrap gap-3">
             <Link href="/about" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">About Working Colours</Link>
-            <Link href="/blog/cost-paint-house-sydney-2025" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Painting Costs 2025</Link>
+            <Link href="/blog/how-much-does-it-cost-to-paint-a-house-sydney" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">How Much Does It Cost to Paint a House?</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/contact" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Get a Free Quote</Link>
