@@ -134,6 +134,85 @@ export default function ContactPage() {
             </form>
           </div>
 
+          {/* Email fallback form */}
+          <div className="lg:col-span-3 mt-10 pt-10 border-t border-gray-200">
+            <h2 className="text-2xl font-bold text-[#1a1a2e] mb-2">Or send us an email</h2>
+            <p className="text-sm text-gray-500 mb-6">Prefer email? Fill in the form below — it will open your email client with your details pre-filled.</p>
+            <form
+              action="mailto:workingcolours@gmail.com"
+              method="POST"
+              encType="text/plain"
+              className="space-y-5"
+            >
+              <div>
+                <label htmlFor="email-name" className="block text-sm font-semibold text-gray-700 mb-1">Full name *</label>
+                <input
+                  type="text"
+                  id="email-name"
+                  name="Name"
+                  required
+                  placeholder="Your name"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label htmlFor="email-phone" className="block text-sm font-semibold text-gray-700 mb-1">Phone number *</label>
+                <input
+                  type="tel"
+                  id="email-phone"
+                  name="Phone"
+                  required
+                  placeholder="04XX XXX XXX"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label htmlFor="email-suburb" className="block text-sm font-semibold text-gray-700 mb-1">Your suburb</label>
+                <input
+                  type="text"
+                  id="email-suburb"
+                  name="Suburb"
+                  placeholder="e.g. Dee Why"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label htmlFor="email-service" className="block text-sm font-semibold text-gray-700 mb-1">Service required</label>
+                <select
+                  id="email-service"
+                  name="Service"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                >
+                  <option value="">Select a service...</option>
+                  <option value="Interior House Painting">Interior House Painting</option>
+                  <option value="Exterior House Painting">Exterior House Painting</option>
+                  <option value="Timber Staining and Restoration">Timber Staining and Restoration</option>
+                  <option value="Deck Staining and Refinishing">Deck Staining and Refinishing</option>
+                  <option value="Doors, Trims, Windows and Louvers">Doors, Trims, Windows and Louvers</option>
+                  <option value="Residential Repaints and Touch-Ups">Residential Repaints and Touch-Ups</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="email-message" className="block text-sm font-semibold text-gray-700 mb-1">Tell us more</label>
+                <textarea
+                  id="email-message"
+                  name="Message"
+                  rows={5}
+                  placeholder="Briefly describe what you need done, the size of the job, and any other relevant details..."
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-[#0066CC] hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors text-base"
+              >
+                Send Email
+              </button>
+              <p className="text-xs text-gray-500 text-center">Opens your email client with your details pre-filled.</p>
+            </form>
+          </div>
+
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-8">
             <div>
@@ -143,7 +222,7 @@ export default function ContactPage() {
                   <span className="text-2xl">📞</span>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Phone</p>
-                    <a href="tel:0434030222" className="text-lg font-bold text-blue-600 hover:underline">0434 030 222</a>
+                    <a href="tel:+61434030222" className="text-lg font-bold text-blue-600 hover:underline">0434 030 222</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

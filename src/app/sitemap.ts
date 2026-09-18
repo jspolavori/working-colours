@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE = 'https://wcpainting.com.au';
+const BASE = 'https://www.wcpainting.com.au';
 
 const services = [
   'interior-painting',
@@ -33,6 +33,16 @@ const areas = [
   'elanora-heights',
   'collaroy-plateau',
   'north-narrabeen',
+  'allambie-heights',
+  'bilgola',
+  'church-point',
+  'curl-curl',
+  'davidson',
+  'forestville',
+  'killarney-heights',
+  'manly-vale',
+  'narraweena',
+  'terrey-hills',
 ];
 
 const blogPosts = [
@@ -46,6 +56,17 @@ const blogPosts = [
   'repainting-before-selling-home-northern-beaches',
   'how-to-choose-a-painter-sydney',
   'interior-painting-mistakes-to-avoid',
+  // New blog posts
+  'cost-paint-house-sydney-2025',
+  'how-choose-painter-northern-beaches',
+  'exterior-paint-life-coastal-environment',
+  'deck-staining-vs-painting',
+  'interior-vs-exterior-paint-difference',
+  'how-prepare-walls-before-painting',
+  'best-time-paint-house-sydney',
+  'how-many-coats-paint-house',
+  'signs-house-needs-repainting-checklist',
+  'best-paint-coastal-homes-ocean',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -53,8 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const core: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
   ];
 
@@ -69,14 +90,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/painters/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly',
-    priority: 0.85,
+    priority: 0.8,
   }));
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((slug) => ({
     url: `${BASE}/blog/${slug}`,
     lastModified: now,
     changeFrequency: 'yearly',
-    priority: 0.6,
+    priority: 0.7,
   }));
 
   return [...core, ...servicePages, ...areaPages, ...blogPages];

@@ -94,7 +94,7 @@ export default function Navbar() {
             {/* CTA + Mobile toggle */}
             <div className="flex items-center gap-3">
               <a
-                href="tel:0434030222"
+                href="tel:+61434030222"
                 className="hidden md:block text-sm font-medium text-gray-700 hover:text-blue-600"
                 onClick={() => trackCall()}
               >

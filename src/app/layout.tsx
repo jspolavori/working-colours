@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import { headers } from 'next/headers';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -12,36 +13,62 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'House Painter Northern Beaches Sydney | Working Colours',
-  description: "Premium residential painting on Sydney's Northern Beaches. Interior, exterior, timber staining, deck staining and more. Get a free quote today.",
-  metadataBase: new URL('https://wcpainting.com.au'),
+  title: "House Painters Northern Beaches | Working Colours",
+  description:
+    "Interior and exterior house painting across Sydney's Northern Beaches. Working Colours provides residential repaints, deck staining and timber finishes.",
+  metadataBase: new URL('https://www.wcpainting.com.au'),
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au',
+  },
   openGraph: {
+    type: 'website',
+    title: "House Painters Northern Beaches | Working Colours",
+    description:
+      "Interior and exterior house painting across Sydney's Northern Beaches. Working Colours provides residential repaints, deck staining and timber finishes.",
+    url: 'https://www.wcpainting.com.au',
     siteName: 'Working Colours Painting Services',
     locale: 'en_AU',
-    type: 'website',
+    images: [
+      {
+        url: 'https://www.wcpainting.com.au/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Working Colours Painting Services — Northern Beaches Sydney',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "House Painters Northern Beaches | Working Colours",
+    description:
+      "Interior and exterior house painting across Sydney's Northern Beaches. Working Colours provides residential repaints, deck staining and timber finishes.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
 };
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://wcpainting.com.au',
+  '@id': 'https://www.wcpainting.com.au',
   name: 'Working Colours Painting Services',
-  url: 'https://wcpainting.com.au',
+  url: 'https://www.wcpainting.com.au',
   telephone: '+61434030222',
+  email: 'info@wcpainting.com.au',
   priceRange: '$$',
   description:
-    "Premium residential painting services across Sydney's Northern Beaches. Interior, exterior, timber staining, deck staining and more.",
+    "Premium residential painting services across Sydney's Northern Beaches. Interior, exterior, timber staining, deck staining and more. 18 years experience.",
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Northern Beaches',
+    streetAddress: '58-60 Park St',
+    addressLocality: 'Narrabeen',
     addressRegion: 'NSW',
+    postalCode: '2101',
     addressCountry: 'AU',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -33.7271,
-    longitude: 151.2897,
+    latitude: -33.7269,
+    longitude: 151.2989,
   },
   areaServed: [
     'Narrabeen', 'Dee Why', 'Collaroy', 'Collaroy Plateau', 'Mona Vale',
@@ -49,6 +76,12 @@ const localBusinessSchema = {
     'Avalon', 'Palm Beach', 'Freshwater', 'Manly', 'Balgowlah', 'Seaforth',
     'Frenchs Forest', 'Belrose', 'Brookvale', 'Cromer',
   ],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '07:00',
+    closes: '17:00',
+  },
   serviceType: 'Residential Painting',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -62,14 +95,13 @@ const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Residential Repaints' } },
     ],
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '47',
-  },
+  // aggregateRating intentionally omitted here until review counts can be verified.
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') ?? '';
+  const isFunnel = pathname.startsWith('/paint-like-a-pro');
   return (
     <html lang="en-AU" className={inter.variable}>
       <head>
@@ -106,9 +138,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        <Navbar />
-        <main className="pb-16 md:pb-0">{children}</main>
-        <Footer />
+        {!isFunnel && <Navbar />}
+        <main className={!isFunnel ? 'pb-16 md:pb-0' : ''}>{children}</main>
+        {!isFunnel && <Footer />}
       </body>
     </html>
   );

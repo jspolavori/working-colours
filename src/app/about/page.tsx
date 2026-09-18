@@ -1,10 +1,31 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Image from 'next/image';
 import CTABanner from '@/components/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'About Working Colours | Northern Beaches Painters',
-  description: "Working Colours is a premium residential painting service on Sydney's Northern Beaches. Owner-operated, detail-focused, honest. Find out more.",
+  title: 'About Working Colours | Painter Northern Beaches Sydney',
+  description:
+    "Working Colours is a premium residential painting service on Sydney's Northern Beaches. Owner-operated, 18 years experience, detail-focused, and honest. Find out more.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/about',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'About Working Colours | Painter Northern Beaches Sydney',
+    description:
+      "Working Colours is a premium residential painting service on Sydney's Northern Beaches. Owner-operated, 18 years experience, detail-focused, and honest. Find out more.",
+    url: 'https://www.wcpainting.com.au/about',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Working Colours | Painter Northern Beaches Sydney',
+    description:
+      "Working Colours is a premium residential painting service on Sydney's Northern Beaches. Owner-operated, 18 years experience, detail-focused, and honest. Find out more.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 export default function AboutPage() {
@@ -14,116 +35,85 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Working Colours</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
-            A Northern Beaches painting company built on a straightforward idea: do the job properly, every time. No shortcuts, no excuses, no surprises.
+            Owner-operated. Northern Beaches based. 18 years in the trade.
           </p>
         </div>
       </section>
 
+      {/* Section 1 — Owner intro */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Who we are</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Working Colours is an owner-operated residential painting business based on Sydney&apos;s Northern Beaches. We specialise in high-quality residential painting — interior and exterior — for homeowners who care about the result.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                We&apos;re not a franchise. We&apos;re not a large crew of subcontractors you&apos;ve never met. We&apos;re a small, focused team that takes on the right number of jobs to do each one properly.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                The Northern Beaches is our home as well as our work area. We know the local conditions, the housing stock, and the standards that homeowners here expect.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Our approach</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Good painting is 70% preparation. That&apos;s where most of the work actually happens — filling holes and cracks, sanding surfaces smooth, cleaning and treating where needed, priming correctly. The topcoat is the final step, not the only one.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                We use quality products suited to each job and each environment. Coastal conditions demand different things from exterior paint than suburban inland conditions do. We know the difference and we specify accordingly.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                We quote honestly, we show up when we say we will, and we leave your home the way we found it — except for the freshly painted surfaces.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-10 text-center">What we stand for</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Honest advice',
-                body: "We tell you what your home actually needs — not the maximum scope we can charge for. If something can wait, we'll say so. If something needs attention now, we'll explain why.",
-              },
-              {
-                title: 'Preparation first',
-                body: "We never rush through the prep to get to the painting. Every surface is properly cleaned, filled, sanded, and primed before paint goes on. That's what makes a job last.",
-              },
-              {
-                title: 'No surprises',
-                body: "You get a detailed, itemised quote before any work starts. The price is the price. We don't add charges mid-job or present you with extras at the end.",
-              },
-              {
-                title: 'Quality products',
-                body: "We use premium paints and coatings suited to each surface and environment. We won't recommend a cheap product and we won't cut corners on materials.",
-              },
-              {
-                title: 'Respect for your home',
-                body: "Drop sheets down from start to finish. Tools cleaned at end of day. Your home treated with care. We work in houses where people are living and we take that seriously.",
-              },
-              {
-                title: 'Work we stand behind',
-                body: "If there are any issues directly related to our application, we come back and address them. We don't consider a job finished until you're satisfied with it.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-white rounded-xl p-6 border border-gray-200">
-                <h3 className="font-bold text-[#1a1a2e] text-lg mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+              <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">Meet John</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  I&apos;m John Spolavori — the owner of Working Colours and the person who shows up to every job.
+                </p>
+                <p>
+                  I&apos;ve been painting homes on the Northern Beaches for over 18 years. I started Working Colours because I wanted to run a business the right way: honest advice, proper preparation, and work I&apos;m proud to stand behind.
+                </p>
+                <p>
+                  You won&apos;t deal with a call centre or a project manager you never meet. You deal with me — from the first call to the final walkthrough.
+                </p>
               </div>
-            ))}
+            </div>
+            <div className="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-200 bg-gray-100">
+              <Image
+                src="/about/john-spolavori.png"
+                alt="John Spolavori, owner of Working Colours Painting Services, on a job on Sydney's Northern Beaches"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Section 2 — What sets us apart */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">What sets us apart</h2>
+          <div className="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              We&apos;re not a franchise. We&apos;re not a roster of subcontractors.
+            </p>
+            <p>
+              Working Colours is a small, focused team. We take on the right number of jobs to do each one properly — and on the Northern Beaches, that means understanding the environment we&apos;re working in.
+            </p>
+            <p>
+              Coastal conditions demand different products, different preparation, and a different level of attention than you&apos;d apply inland. Salt air, UV exposure, humidity — we factor all of it into every quote and every product selection. We&apos;ve been doing it here for 18 years. We know what holds up.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 — How we work */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">Our services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {[
-              { name: 'Interior House Painting', href: '/services/interior-painting' },
-              { name: 'Exterior House Painting', href: '/services/exterior-painting' },
-              { name: 'Timber Staining and Restoration', href: '/services/timber-staining' },
-              { name: 'Deck Staining and Refinishing', href: '/services/deck-staining' },
-              { name: 'Doors, Trims and Windows', href: '/services/doors-trims-windows' },
-              { name: 'Residential Repaints', href: '/services/residential-repaints' },
-            ].map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-colors"
-              >
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                <span className="font-medium text-[#1a1a2e]">{service.name}</span>
-              </Link>
-            ))}
+          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">How we work</h2>
+          <div className="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              Good painting is 70% preparation. That&apos;s not a phrase we use to sound thorough — it&apos;s where the actual work happens. Filling, sanding, cleaning, priming. Done properly, a paint job lasts. Rushed, it fails in two years regardless of the product.
+            </p>
+            <p>
+              We quote honestly. We show up on time. We leave your home clean at the end of every day. If there&apos;s ever an issue directly related to our application, we come back and fix it. No argument.
+            </p>
           </div>
+        </div>
+      </section>
 
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Our service area</h2>
-          <p className="text-gray-600 mb-4">
-            We work throughout Sydney&apos;s Northern Beaches — from Manly and Freshwater in the south to Palm Beach at the tip of the peninsula. Our main areas include:
-          </p>
-          <p className="text-gray-600 mb-4">
-            Narrabeen · Dee Why · Collaroy · Mona Vale · Warriewood · Newport · Avalon · Palm Beach · Freshwater · Manly · Balgowlah · Seaforth · Frenchs Forest · Belrose · Brookvale · Cromer and surrounding suburbs.
-          </p>
-          <Link href="/painters/northern-beaches" className="text-blue-600 hover:underline font-medium">
-            View our full service area
-          </Link>
+      {/* Section 4 — Closing */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="border-l-4 border-[#0066CC] pl-6">
+            <p className="text-gray-600 leading-relaxed mb-4">
+              If you&apos;re looking for a painter on the Northern Beaches who takes the job seriously, I&apos;d love to come out and take a look. No pressure, no vague estimate — just an honest conversation about what your home needs.
+            </p>
+            <p className="font-semibold text-[#1a1a2e]">— John Spolavori, Working Colours</p>
+          </div>
         </div>
       </section>
 
@@ -131,7 +121,7 @@ export default function AboutPage() {
         heading="Ready to get started?"
         body="Get in touch for a free quote. We visit your property in person, assess what it needs, and give you an honest, detailed price."
         primaryCTA={{ text: 'Get a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
     </>
   );

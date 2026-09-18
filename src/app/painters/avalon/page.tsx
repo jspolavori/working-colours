@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Avalon Beach | Working Colours Northern Beaches',
-  description: "Professional residential painting in Avalon Beach. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Free quote.",
+  title: 'Painter Avalon | Working Colours Painting Services',
+  description:
+    "Painter in Avalon — Working Colours. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Call 0434 030 222 for a free quote.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/painters/avalon',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Painter Avalon | Working Colours Painting Services',
+    description:
+      "Painter in Avalon — Working Colours. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Call 0434 030 222 for a free quote.",
+    url: 'https://www.wcpainting.com.au/painters/avalon',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painter Avalon | Working Colours Painting Services',
+    description:
+      "Painter in Avalon — Working Colours. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Call 0434 030 222 for a free quote.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,36 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Northern Beaches Painters",
+      "item": "https://www.wcpainting.com.au/painters/northern-beaches"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Painter Avalon",
+      "item": "https://www.wcpainting.com.au/painters/avalon"
+    }
+  ]
+};
+
 export default function AvalonPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">
@@ -82,7 +130,7 @@ export default function AvalonPage() {
         heading="Get a free quote in Avalon Beach"
         body="We'll visit your property, assess what it needs, and give you a detailed quote. No obligation."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <FAQSection faqs={faqs} />

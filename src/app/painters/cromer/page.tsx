@@ -4,8 +4,26 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Cromer | Working Colours Northern Beaches',
-  description: "Residential painting in Cromer — interior, exterior and timber work for well-established family homes. Free quote from Working Colours.",
+  title: 'Painter Cromer | Working Colours Painting Services',
+  description: "Painter Cromer — interior, exterior and timber work for well-established family homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/painters/cromer',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Painter Cromer | Working Colours Painting Services',
+    description: "Painter Cromer — interior, exterior and timber work for well-established family homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
+    url: 'https://www.wcpainting.com.au/painters/cromer',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painter Cromer | Working Colours Painting Services',
+    description: "Painter Cromer — interior, exterior and timber work for well-established family homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +45,36 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Northern Beaches Painters",
+      "item": "https://www.wcpainting.com.au/painters/northern-beaches"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Painter Cromer",
+      "item": "https://www.wcpainting.com.au/painters/cromer"
+    }
+  ]
+};
+
 export default function CromerPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">
@@ -82,7 +127,7 @@ export default function CromerPage() {
         heading="Get a free quote in Cromer"
         body="We visit in person, assess the job, and give you a detailed quote with no obligation."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <FAQSection faqs={faqs} />

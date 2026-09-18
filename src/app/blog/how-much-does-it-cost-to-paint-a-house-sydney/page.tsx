@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'How Much Does It Cost to Paint a House in Sydney? | Working Colours',
-  description: "A practical guide to house painting costs in Sydney — interior vs exterior, what affects the price, and what to expect for an average 3-bedroom home on the Northern Beaches.",
+  title: 'How Much Does It Cost to Paint a House in Sydney? | Working Colours Painting Northern Beaches',
+  description:
+    "A practical guide to house painting costs in Sydney 2025 — interior vs exterior, what affects the price, and what to expect. From Working Colours, Northern Beaches painters.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog/how-much-does-it-cost-to-paint-a-house-sydney',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'How Much Does It Cost to Paint a House in Sydney? | Working Colours Painting Northern Beaches',
+    description:
+      "A practical guide to house painting costs in Sydney 2025 — interior vs exterior, what affects the price, and what to expect. From Working Colours, Northern Beaches painters.",
+    url: 'https://www.wcpainting.com.au/blog/how-much-does-it-cost-to-paint-a-house-sydney',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How Much Does It Cost to Paint a House in Sydney? | Working Colours Painting Northern Beaches',
+    description:
+      "A practical guide to house painting costs in Sydney 2025 — interior vs exterior, what affects the price, and what to expect. From Working Colours, Northern Beaches painters.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,61 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.wcpainting.com.au/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How Much Does It Cost to Paint a House in Sydney?",
+      "item": "https://www.wcpainting.com.au/blog/how-much-does-it-cost-to-paint-a-house-sydney"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Much Does It Cost to Paint a House in Sydney?",
+  "description": "A practical guide to house painting costs in Sydney 2025 — interior vs exterior, what affects the price, and what to expect. From Working Colours, Northern Beaches painters.",
+  "url": "https://www.wcpainting.com.au/blog/how-much-does-it-cost-to-paint-a-house-sydney",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.wcpainting.com.au/blog/how-much-does-it-cost-to-paint-a-house-sydney"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wcpainting.com.au/logo.png"
+    }
+  }
+};
+
 export default function CostToHouseArticlePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">
@@ -53,6 +126,12 @@ export default function CostToHouseArticlePage() {
           <p className="text-gray-600 leading-relaxed mb-8">
             A full house repaint — interior and exterior — for a three-to-four bedroom home on the Northern Beaches typically falls somewhere between $12,000 and $22,000 for a quality job. The wide range reflects differences in home size, number of storeys, surface condition, and the extent of preparation required.
           </p>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed">
+              These figures are general Sydney market indicators to help with early budgeting — not a quote from Working Colours. Every home is different, so the only reliable number is a detailed, itemised quote after an in-person assessment.
+            </p>
+          </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">What affects the price</h2>
           <div className="space-y-4 mb-8">
@@ -117,7 +196,7 @@ export default function CostToHouseArticlePage() {
         heading="Get an accurate quote for your home"
         body="We visit in person, assess the job properly, and give you a detailed, itemised price. No estimates, no surprises."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <FAQSection faqs={faqs} />

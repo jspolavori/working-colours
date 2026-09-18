@@ -5,7 +5,25 @@ import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
   title: 'Painter Curl Curl | Working Colours Painting Services',
-  description: 'Professional house painting in Curl Curl. Coastal home specialists — exterior repaints, interior painting, timber staining. Free quote from your local Northern Beaches painter.',
+  description: "Painter Curl Curl — exterior repaints, interior painting, timber staining for coastal homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/painters/curl-curl',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Painter Curl Curl | Working Colours Painting Services',
+    description: "Painter Curl Curl — exterior repaints, interior painting, timber staining for coastal homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
+    url: 'https://www.wcpainting.com.au/painters/curl-curl',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painter Curl Curl | Working Colours Painting Services',
+    description: "Painter Curl Curl — exterior repaints, interior painting, timber staining for coastal homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +45,36 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Northern Beaches Painters",
+      "item": "https://www.wcpainting.com.au/painters/northern-beaches"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Painter Curl Curl",
+      "item": "https://www.wcpainting.com.au/painters/curl-curl"
+    }
+  ]
+};
+
 export default function CurlCurlPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">
@@ -41,7 +86,7 @@ export default function CurlCurlPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link href="/contact" className="bg-white text-blue-700 font-semibold px-7 py-3 rounded-lg hover:bg-blue-50 transition-colors">Get a Free Quote</Link>
-            <a href="tel:0434030222" className="border-2 border-white text-white font-semibold px-7 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition-colors">0434 030 222</a>
+            <a href="tel:+61434030222" className="border-2 border-white text-white font-semibold px-7 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition-colors">0434 030 222</a>
           </div>
         </div>
       </section>
@@ -83,7 +128,7 @@ export default function CurlCurlPage() {
         heading="Get a free quote in Curl Curl"
         body="Local Northern Beaches painters who understand coastal conditions. Get in touch today."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <section className="py-12 px-4 bg-white">

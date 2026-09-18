@@ -13,7 +13,7 @@ export default function Footer() {
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Premium residential painting services across Sydney&apos;s Northern Beaches.
             </p>
-            <a href="tel:0434030222" className="text-white font-semibold hover:text-blue-400 transition-colors">0434 030 222</a>
+            <a href="tel:+61434030222" className="text-white font-semibold hover:text-blue-400 transition-colors">0434 030 222</a>
           </div>
 
           {/* Services */}
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© 2025 Working Colours Painting Services. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Working Colours Painting Services. All rights reserved.</p>
           <p>Sydney&apos;s Northern Beaches, NSW, Australia</p>
         </div>
       </div>

@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Timber Restoration vs Replacement: What Is Worth Doing? | Working Colours',
-  description: "When can weathered timber be restored, and when is replacement the better option? A practical guide to making the right call on decks, fences, and cladding.",
+  title: 'Timber Restoration vs Replacement: What Is Worth Doing? | Working Colours Painting Northern Beaches',
+  description:
+    "When can weathered timber be restored, and when is replacement the better option? A practical guide to making the right call on decks, fences, and cladding.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog/timber-restoration-vs-replacement',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Timber Restoration vs Replacement: What Is Worth Doing? | Working Colours Painting Northern Beaches',
+    description:
+      "When can weathered timber be restored, and when is replacement the better option? A practical guide to making the right call on decks, fences, and cladding.",
+    url: 'https://www.wcpainting.com.au/blog/timber-restoration-vs-replacement',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Timber Restoration vs Replacement: What Is Worth Doing? | Working Colours Painting Northern Beaches',
+    description:
+      "When can weathered timber be restored, and when is replacement the better option? A practical guide to making the right call on decks, fences, and cladding.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,61 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.wcpainting.com.au/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Timber Restoration vs Replacement: What Is Worth Doing?",
+      "item": "https://www.wcpainting.com.au/blog/timber-restoration-vs-replacement"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Timber Restoration vs Replacement: What Is Worth Doing?",
+  "description": "When can weathered timber be restored, and when is replacement the better option? A practical guide to making the right call on decks, fences, and cladding.",
+  "url": "https://www.wcpainting.com.au/blog/timber-restoration-vs-replacement",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.wcpainting.com.au/blog/timber-restoration-vs-replacement"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wcpainting.com.au/logo.png"
+    }
+  }
+};
+
 export default function TimberRestorationArticlePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">

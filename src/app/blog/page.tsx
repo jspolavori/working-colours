@@ -2,11 +2,92 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Painting Tips and Advice | Working Colours Blog',
-  description: "Practical guides and advice for Northern Beaches homeowners on house painting, timber care, deck staining, colour selection, and more from Working Colours.",
+  title: 'Painting Tips & Advice | Working Colours Painting Northern Beaches',
+  description:
+    "Practical guides for Northern Beaches homeowners on house painting, timber care, deck staining, and colour selection. From Working Colours — your local painter.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Painting Tips & Advice | Working Colours Painting Northern Beaches',
+    description:
+      "Practical guides for Northern Beaches homeowners on house painting, timber care, deck staining, and colour selection. From Working Colours — your local painter.",
+    url: 'https://www.wcpainting.com.au/blog',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painting Tips & Advice | Working Colours Painting Northern Beaches',
+    description:
+      "Practical guides for Northern Beaches homeowners on house painting, timber care, deck staining, and colour selection. From Working Colours — your local painter.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const articles = [
+  {
+    title: 'How Much Does It Cost to Paint a House in Sydney in 2025?',
+    excerpt: 'Updated 2025 guide to house painting costs — what to budget for interior, exterior, and full repaints on Sydney\'s Northern Beaches.',
+    href: '/blog/cost-paint-house-sydney-2025',
+    category: 'Cost & Budgeting',
+  },
+  {
+    title: 'How to Choose a Painter on the Northern Beaches — 5 Things to Check',
+    excerpt: 'Five things to check before hiring a painter on the Northern Beaches — from licensing to preparation approach. Advice from 18 years in the trade.',
+    href: '/blog/how-choose-painter-northern-beaches',
+    category: 'Hiring a Painter',
+  },
+  {
+    title: 'How Long Does Exterior Paint Last in a Coastal Environment?',
+    excerpt: 'Exterior paint near the ocean degrades faster than inland. Realistic lifespan expectations for Northern Beaches homes and what extends paint life.',
+    href: '/blog/exterior-paint-life-coastal-environment',
+    category: 'Exterior Painting',
+  },
+  {
+    title: 'Deck Staining vs Deck Painting — Which Is Better for Your Home?',
+    excerpt: 'Stain or paint your deck? The honest answer depends on your timber, your exposure, and what you want long-term. From Northern Beaches deck specialists.',
+    href: '/blog/deck-staining-vs-painting',
+    category: 'Decks & Timber',
+  },
+  {
+    title: 'Interior vs Exterior Paint — What Is the Difference and Why It Matters',
+    excerpt: 'Interior and exterior paints are formulated for fundamentally different jobs. Using the wrong product in the wrong place causes real problems.',
+    href: '/blog/interior-vs-exterior-paint-difference',
+    category: 'Painting Advice',
+  },
+  {
+    title: 'How to Prepare Walls Before Painting — The Professional Way',
+    excerpt: 'Good painting is 70% preparation. The step-by-step professional approach to preparing walls — washing, filling, sanding, priming, and masking.',
+    href: '/blog/how-prepare-walls-before-painting',
+    category: 'Interior Painting',
+  },
+  {
+    title: 'Best Time of Year to Paint Your Home in Sydney',
+    excerpt: 'Spring and autumn are ideal, but there are good reasons to paint in winter too. When to schedule your painting job and what conditions to avoid.',
+    href: '/blog/best-time-paint-house-sydney',
+    category: 'Painting Advice',
+  },
+  {
+    title: 'How Many Coats of Paint Does a House Need?',
+    excerpt: 'The honest answer: primer plus two topcoats for most jobs. When three coats are needed — and how one-coat quotes cost more in the long run.',
+    href: '/blog/how-many-coats-paint-house',
+    category: 'Painting Advice',
+  },
+  {
+    title: 'Signs Your Home Needs Repainting — Exterior Checklist',
+    excerpt: 'A practical checklist of warning signs that your exterior paint is failing. From chalking and fading through to peeling and mould growth.',
+    href: '/blog/signs-house-needs-repainting-checklist',
+    category: 'Maintenance',
+  },
+  {
+    title: 'What Paint Is Best for Coastal Homes Near the Ocean?',
+    excerpt: 'The key properties to look for in paint for a Northern Beaches home — UV resistance, flexibility, mould inhibitors, and substrate-specific guidance.',
+    href: '/blog/best-paint-coastal-homes-ocean',
+    category: 'Exterior Painting',
+  },
   {
     title: 'How Much Does It Cost to Paint a House in Sydney?',
     excerpt: 'A practical guide to understanding house painting costs in Sydney — what affects the price, what to expect for an average home, and how to get a fair quote.',

@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Should You Repaint Before Selling Your Home on the Northern Beaches? | Working Colours',
-  description: "The case for repainting before going to market — which areas matter most, what colours appeal to buyers, and whether the investment makes sense.",
+  title: 'Should You Repaint Before Selling Your Home on the Northern Beaches? | Working Colours Painting Northern Beaches',
+  description:
+    "The case for repainting before going to market on the Northern Beaches — which areas matter most, what colours appeal to buyers, and whether the investment makes sense.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog/repainting-before-selling-home-northern-beaches',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Should You Repaint Before Selling Your Home on the Northern Beaches? | Working Colours Painting Northern Beaches',
+    description:
+      "The case for repainting before going to market on the Northern Beaches — which areas matter most, what colours appeal to buyers, and whether the investment makes sense.",
+    url: 'https://www.wcpainting.com.au/blog/repainting-before-selling-home-northern-beaches',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Should You Repaint Before Selling Your Home on the Northern Beaches? | Working Colours Painting Northern Beaches',
+    description:
+      "The case for repainting before going to market on the Northern Beaches — which areas matter most, what colours appeal to buyers, and whether the investment makes sense.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,61 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.wcpainting.com.au/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Should You Repaint Before Selling Your Home on the Northern Beaches?",
+      "item": "https://www.wcpainting.com.au/blog/repainting-before-selling-home-northern-beaches"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Should You Repaint Before Selling Your Home on the Northern Beaches?",
+  "description": "The case for repainting before going to market on the Northern Beaches — which areas matter most, what colours appeal to buyers, and whether the investment makes sense.",
+  "url": "https://www.wcpainting.com.au/blog/repainting-before-selling-home-northern-beaches",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.wcpainting.com.au/blog/repainting-before-selling-home-northern-beaches"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wcpainting.com.au/logo.png"
+    }
+  }
+};
+
 export default function PresaleRepaintArticlePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">

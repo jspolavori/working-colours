@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Allow: /
+
+# OpenAI's search crawler — allowed to access public pages, same as other
+# search engines. This is separate from GPTBot (AI training), which is not
+# specifically restricted here and falls under the general "*" rule above.
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.wcpainting.com.au/sitemap.xml

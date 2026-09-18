@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Deck Staining Northern Beaches Sydney | Working Colours',
-  description: "Professional deck staining and refinishing on Sydney's Northern Beaches. Sand, prepare, and protect. Get a free quote.",
+  title: 'Deck Staining Northern Beaches | Working Colours Painters',
+  description:
+    "Professional deck staining and refinishing on Sydney's Northern Beaches. Sand, prepare, and protect your deck from coastal conditions. Call 0434 030 222 for a free quote.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/services/deck-staining',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Deck Staining Northern Beaches | Working Colours Painters',
+    description:
+      "Professional deck staining and refinishing on Sydney's Northern Beaches. Sand, prepare, and protect your deck from coastal conditions. Call 0434 030 222 for a free quote.",
+    url: 'https://www.wcpainting.com.au/services/deck-staining',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Deck Staining Northern Beaches | Working Colours Painters',
+    description:
+      "Professional deck staining and refinishing on Sydney's Northern Beaches. Sand, prepare, and protect your deck from coastal conditions. Call 0434 030 222 for a free quote.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -31,9 +52,30 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Deck Staining & Refinishing",
+      "item": "https://www.wcpainting.com.au/services/deck-staining"
+    }
+  ]
+};
+
 export default function DeckStainingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -111,7 +153,7 @@ export default function DeckStainingPage() {
         heading="Get a free deck assessment and quote"
         body="We'll assess your deck honestly and give you a clear recommendation on what it needs — and what it'll cost."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <FAQSection faqs={faqs} />
@@ -124,6 +166,22 @@ export default function DeckStainingPage() {
             <Link href="/services/timber-staining" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Timber Staining</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>
             <Link href="/services/residential-repaints" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Residential Repaints</Link>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 px-4 bg-[#f8f9fa]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-[#1a1a2e] mb-6">Popular Northern Beaches areas we service</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/painters/narrabeen" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Narrabeen</Link>
+            <Link href="/painters/dee-why" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Dee Why</Link>
+            <Link href="/painters/mona-vale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Mona Vale</Link>
+            <Link href="/painters/manly" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Manly</Link>
+            <Link href="/painters/newport" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Newport</Link>
+            <Link href="/painters/avalon" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Avalon</Link>
+            <Link href="/painters/collaroy" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Collaroy</Link>
+            <Link href="/painters/freshwater" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Freshwater</Link>
+            <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
           </div>
         </div>
       </section>

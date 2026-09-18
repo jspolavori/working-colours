@@ -1,16 +1,43 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import HeroForm from '@/components/HeroForm';
 import ServiceCard from '@/components/ServiceCard';
 import SuburbCard from '@/components/SuburbCard';
 import ReviewCard from '@/components/ReviewCard';
 import FAQSection from '@/components/FAQSection';
-import CTABanner from '@/components/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'House Painter Northern Beaches Sydney | Working Colours',
+  title: "House Painters Northern Beaches | Working Colours",
   description:
-    "Premium residential painting on Sydney's Northern Beaches. Interior, exterior, timber staining, deck staining and more. Get a free quote today.",
+    "Interior and exterior house painting across Sydney's Northern Beaches. Working Colours provides residential repaints, deck staining and timber finishes.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au',
+  },
+  openGraph: {
+    type: 'website',
+    title: "House Painters Northern Beaches | Working Colours",
+    description:
+      "Interior and exterior house painting across Sydney's Northern Beaches. Working Colours provides residential repaints, deck staining and timber finishes.",
+    url: 'https://www.wcpainting.com.au',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [
+      {
+        url: 'https://www.wcpainting.com.au/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Working Colours Painting Services — Northern Beaches Sydney',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "House Painters Northern Beaches | Working Colours",
+    description:
+      "Interior and exterior house painting across Sydney's Northern Beaches. Working Colours provides residential repaints, deck staining and timber finishes.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const services = [
@@ -192,20 +219,39 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
-            House Painter<br />
-            <span className="text-white">Northern Beaches</span>{' '}
-            <span style={{ color: '#0066CC' }}>Sydney</span>
+            House Painters on Sydney’s Northern Beaches
           </h1>
 
           <p className="text-xl md:text-2xl font-medium mb-6" style={{ color: '#60a5fa' }}>
             Clean work. On time. No stress.
           </p>
 
-          <p className="text-base md:text-lg text-blue-100/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Looking for a reliable house painter in Sydney&apos;s Northern Beaches? We specialise in
-            premium residential painting — interior and exterior — for homeowners who want quality
-            results, a tidy worksite, and a painter they can actually trust.
+          <p className="text-base md:text-lg text-blue-100/80 max-w-2xl mx-auto mb-6 leading-relaxed">
+            Interior and exterior house painting, residential repaints and timber finishes across Sydney&apos;s Northern Beaches. Tell us about your project to arrange a free quote.
           </p>
+
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <Link
+              href="/contact"
+              className="bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition text-sm"
+            >
+              Request a Free Quote
+            </Link>
+            <a
+              href="https://wa.me/61434030222"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-white/60 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all duration-200 text-sm"
+            >
+              WhatsApp Us
+            </a>
+            <a
+              href="tel:+61434030222"
+              className="border-2 border-white/30 text-white/80 font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-all duration-200 text-sm"
+            >
+              Call 0434 030 222
+            </a>
+          </div>
 
           {/* Mini hero form — above the fold capture */}
           <HeroForm />
@@ -227,9 +273,15 @@ export default function HomePage() {
             </a>
           </div>
 
+          <p className="text-sm md:text-base text-blue-100/70 max-w-xl mx-auto mb-6 leading-relaxed">
+            Get a free, no-obligation quote — we&apos;ll visit your property in person, assess what it needs, and give you an honest price. No call centres. No vague estimates. Just John and the team.
+          </p>
+
           {/* Trust bar */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-blue-200/80">
             <span>5.0 Google Rating</span>
+            <span className="hidden sm:inline text-blue-800">·</span>
+            <span>18 Years in the Trade</span>
             <span className="hidden sm:inline text-blue-800">·</span>
             <span>Local Northern Beaches Team</span>
             <span className="hidden sm:inline text-blue-800">·</span>
@@ -252,7 +304,7 @@ export default function HomePage() {
             {[
               { stat: '500+', label: 'Homes Painted' },
               { stat: '5.0', label: 'Google Rating' },
-              { stat: '10+', label: 'Years Experience' },
+              { stat: '18', label: 'Years Experience' },
               { stat: '100%', label: 'Northern Beaches Locals' },
             ].map((item) => (
               <div key={item.label} className="text-center px-4 py-2">
@@ -260,6 +312,30 @@ export default function HomePage() {
                 <div className="text-sm text-gray-500 mt-0.5">{item.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── REVIEWS ─── */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-[#6b7280] max-w-xl mx-auto">
+              Real feedback from Northern Beaches homeowners.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {reviews.map((review) => (
+              <ReviewCard key={review.name} {...review} />
+            ))}
+          </div>
+          <div className="text-center">
+            <span className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2 text-sm font-semibold text-yellow-800">
+              5.0 — Based on Google Reviews
+            </span>
           </div>
         </div>
       </section>
@@ -382,30 +458,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── REVIEWS ─── */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="text-[#6b7280] max-w-xl mx-auto">
-              Real feedback from Northern Beaches homeowners.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {reviews.map((review) => (
-              <ReviewCard key={review.name} {...review} />
-            ))}
-          </div>
-          <div className="text-center">
-            <span className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-5 py-2 text-sm font-semibold text-yellow-800">
-              5.0 — Based on Google Reviews
-            </span>
-          </div>
-        </div>
-      </section>
-
       {/* ─── GALLERY ─── */}
       <section className="py-20 px-4 bg-[#f8f9fa]">
         <div className="max-w-6xl mx-auto">
@@ -425,10 +477,13 @@ export default function HomePage() {
               { src: '/gallery/job-6.jpg', alt: 'White gloss window frames and trims with ocean view — stain to gloss conversion' },
             ].map((img) => (
               <div key={img.src} className="relative overflow-hidden rounded-xl aspect-[4/3] bg-gray-200 group">
-                <img
+                <Image
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             ))}

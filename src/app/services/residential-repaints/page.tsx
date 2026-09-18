@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Residential Repaints Northern Beaches Sydney | Working Colours',
-  description: "Full house repaints and touch-ups across Sydney's Northern Beaches. Interior, exterior, or both. Honest assessment and detailed quote. Book now.",
+  title: 'Residential Repaints Northern Beaches | Working Colours Painters',
+  description:
+    "Full house repaints and touch-ups across Sydney's Northern Beaches. Interior, exterior, or both. Honest assessment and detailed quote. Call 0434 030 222 to book.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/services/residential-repaints',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Residential Repaints Northern Beaches | Working Colours Painters',
+    description:
+      "Full house repaints and touch-ups across Sydney's Northern Beaches. Interior, exterior, or both. Honest assessment and detailed quote. Call 0434 030 222 to book.",
+    url: 'https://www.wcpainting.com.au/services/residential-repaints',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Residential Repaints Northern Beaches | Working Colours Painters',
+    description:
+      "Full house repaints and touch-ups across Sydney's Northern Beaches. Interior, exterior, or both. Honest assessment and detailed quote. Call 0434 030 222 to book.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -39,9 +60,30 @@ const reasons = [
   { label: 'General maintenance', detail: "The paintwork is still doing its job, but it is time to refresh it before problems begin to develop." },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Residential Repaints",
+      "item": "https://www.wcpainting.com.au/services/residential-repaints"
+    }
+  ]
+};
+
 export default function ResidentialRepaintsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -126,7 +168,7 @@ export default function ResidentialRepaintsPage() {
         heading="Get a free residential repaint quote"
         body="We'll visit your home, assess the job properly, and give you a detailed, itemised quote. No guesswork."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <FAQSection faqs={faqs} />
@@ -139,6 +181,22 @@ export default function ResidentialRepaintsPage() {
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>
             <Link href="/services/doors-trims-windows" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Doors, Trims &amp; Windows</Link>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 px-4 bg-[#f8f9fa]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-[#1a1a2e] mb-6">Popular Northern Beaches areas we service</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/painters/narrabeen" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Narrabeen</Link>
+            <Link href="/painters/dee-why" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Dee Why</Link>
+            <Link href="/painters/mona-vale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Mona Vale</Link>
+            <Link href="/painters/manly" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Manly</Link>
+            <Link href="/painters/newport" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Newport</Link>
+            <Link href="/painters/avalon" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Avalon</Link>
+            <Link href="/painters/collaroy" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Collaroy</Link>
+            <Link href="/painters/freshwater" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Freshwater</Link>
+            <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
           </div>
         </div>
       </section>

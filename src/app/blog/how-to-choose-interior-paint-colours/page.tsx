@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'How to Choose Interior Paint Colours for Your Home | Working Colours',
-  description: "Practical advice on choosing interior paint colours — test patches, lighting at different times of day, warm vs cool tones, open-plan spaces, and feature walls.",
+  title: 'How to Choose Interior Paint Colours for Your Home | Working Colours Painting Northern Beaches',
+  description:
+    "Practical advice on choosing interior paint colours — test patches, lighting at different times of day, warm vs cool tones, open-plan spaces, and feature walls.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog/how-to-choose-interior-paint-colours',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'How to Choose Interior Paint Colours for Your Home | Working Colours Painting Northern Beaches',
+    description:
+      "Practical advice on choosing interior paint colours — test patches, lighting at different times of day, warm vs cool tones, open-plan spaces, and feature walls.",
+    url: 'https://www.wcpainting.com.au/blog/how-to-choose-interior-paint-colours',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Choose Interior Paint Colours for Your Home | Working Colours Painting Northern Beaches',
+    description:
+      "Practical advice on choosing interior paint colours — test patches, lighting at different times of day, warm vs cool tones, open-plan spaces, and feature walls.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,61 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.wcpainting.com.au/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Choose Interior Paint Colours for Your Home",
+      "item": "https://www.wcpainting.com.au/blog/how-to-choose-interior-paint-colours"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Choose Interior Paint Colours for Your Home",
+  "description": "Practical advice on choosing interior paint colours — test patches, lighting at different times of day, warm vs cool tones, open-plan spaces, and feature walls.",
+  "url": "https://www.wcpainting.com.au/blog/how-to-choose-interior-paint-colours",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.wcpainting.com.au/blog/how-to-choose-interior-paint-colours"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wcpainting.com.au/logo.png"
+    }
+  }
+};
+
 export default function InteriorColoursArticlePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">

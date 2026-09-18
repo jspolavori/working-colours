@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Palm Beach Sydney | Working Colours Northern Beaches',
-  description: "Premium residential painting in Palm Beach, Sydney. Exterior, interior, timber and deck work for prestige coastal homes. Free quote from your local Northern Beaches painter.",
+  title: 'Painter Palm Beach | Working Colours Painting Services',
+  description:
+    "Painter in Palm Beach — Working Colours. Exterior, interior, timber and deck work for prestige coastal homes. Local Northern Beaches team. Call 0434 030 222.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/painters/palm-beach',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Painter Palm Beach | Working Colours Painting Services',
+    description:
+      "Painter in Palm Beach — Working Colours. Exterior, interior, timber and deck work for prestige coastal homes. Local Northern Beaches team. Call 0434 030 222.",
+    url: 'https://www.wcpainting.com.au/painters/palm-beach',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painter Palm Beach | Working Colours Painting Services',
+    description:
+      "Painter in Palm Beach — Working Colours. Exterior, interior, timber and deck work for prestige coastal homes. Local Northern Beaches team. Call 0434 030 222.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,36 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Northern Beaches Painters",
+      "item": "https://www.wcpainting.com.au/painters/northern-beaches"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Painter Palm Beach",
+      "item": "https://www.wcpainting.com.au/painters/palm-beach"
+    }
+  ]
+};
+
 export default function PalmBeachPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">
@@ -100,7 +148,7 @@ export default function PalmBeachPage() {
         heading="Get a free quote in Palm Beach"
         body="We'll come out to your property, assess the surfaces, and give you an honest recommendation and detailed quote."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <FAQSection faqs={faqs} />

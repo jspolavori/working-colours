@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Interior Painting Mistakes to Avoid | Working Colours',
-  description: "The most common interior painting mistakes — from skipping primer to rushing between coats — and what to do instead for a finish that actually lasts.",
+  title: 'Interior Painting Mistakes to Avoid | Working Colours Painting Northern Beaches',
+  description:
+    "The most common interior painting mistakes — from skipping primer to rushing between coats — and what to do instead for a finish that actually lasts.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog/interior-painting-mistakes-to-avoid',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Interior Painting Mistakes to Avoid | Working Colours Painting Northern Beaches',
+    description:
+      "The most common interior painting mistakes — from skipping primer to rushing between coats — and what to do instead for a finish that actually lasts.",
+    url: 'https://www.wcpainting.com.au/blog/interior-painting-mistakes-to-avoid',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Interior Painting Mistakes to Avoid | Working Colours Painting Northern Beaches',
+    description:
+      "The most common interior painting mistakes — from skipping primer to rushing between coats — and what to do instead for a finish that actually lasts.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,61 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.wcpainting.com.au/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Interior Painting Mistakes to Avoid",
+      "item": "https://www.wcpainting.com.au/blog/interior-painting-mistakes-to-avoid"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Interior Painting Mistakes to Avoid",
+  "description": "The most common interior painting mistakes — from skipping primer to rushing between coats — and what to do instead for a finish that actually lasts.",
+  "url": "https://www.wcpainting.com.au/blog/interior-painting-mistakes-to-avoid",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.wcpainting.com.au/blog/interior-painting-mistakes-to-avoid"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wcpainting.com.au/logo.png"
+    }
+  }
+};
+
 export default function PaintingMistakesArticlePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">

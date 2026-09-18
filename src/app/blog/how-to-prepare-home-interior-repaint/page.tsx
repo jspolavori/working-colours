@@ -4,8 +4,29 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'How to Prepare Your Home for an Interior Repaint | Working Colours',
-  description: "What homeowners need to do before the painters arrive — and what the painter handles. A practical guide to getting ready for an interior repaint.",
+  title: 'How to Prepare Your Home for an Interior Repaint | Working Colours Painting Northern Beaches',
+  description:
+    "What homeowners need to do before the painters arrive — and what the painter handles. A practical guide to getting ready for an interior repaint. From Northern Beaches painters.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/blog/how-to-prepare-home-interior-repaint',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'How to Prepare Your Home for an Interior Repaint | Working Colours Painting Northern Beaches',
+    description:
+      "What homeowners need to do before the painters arrive — and what the painter handles. A practical guide to getting ready for an interior repaint. From Northern Beaches painters.",
+    url: 'https://www.wcpainting.com.au/blog/how-to-prepare-home-interior-repaint',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Prepare Your Home for an Interior Repaint | Working Colours Painting Northern Beaches',
+    description:
+      "What homeowners need to do before the painters arrive — and what the painter handles. A practical guide to getting ready for an interior repaint. From Northern Beaches painters.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,61 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.wcpainting.com.au/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Prepare Your Home for an Interior Repaint",
+      "item": "https://www.wcpainting.com.au/blog/how-to-prepare-home-interior-repaint"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Prepare Your Home for an Interior Repaint",
+  "description": "What homeowners need to do before the painters arrive — and what the painter handles. A practical guide to getting ready for an interior repaint. From Northern Beaches painters.",
+  "url": "https://www.wcpainting.com.au/blog/how-to-prepare-home-interior-repaint",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.wcpainting.com.au/blog/how-to-prepare-home-interior-repaint"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Working Colours Painting Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wcpainting.com.au/logo.png"
+    }
+  }
+};
+
 export default function PrepareForRepaintArticlePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">

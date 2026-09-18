@@ -5,7 +5,28 @@ import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
   title: 'Painter Narrabeen | Working Colours Painting Services',
-  description: "Professional house painting in Narrabeen. Interior, exterior, timber staining. Local Northern Beaches team. Get a free quote.",
+  description:
+    "Painter in Narrabeen — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches team with 18 years experience. Call 0434 030 222.",
+  alternates: {
+    canonical: 'https://www.wcpainting.com.au/painters/narrabeen',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Painter Narrabeen | Working Colours Painting Services',
+    description:
+      "Painter in Narrabeen — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches team with 18 years experience. Call 0434 030 222.",
+    url: 'https://www.wcpainting.com.au/painters/narrabeen',
+    siteName: 'Working Colours Painting Services',
+    locale: 'en_AU',
+    images: [{ url: 'https://www.wcpainting.com.au/og-image.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painter Narrabeen | Working Colours Painting Services',
+    description:
+      "Painter in Narrabeen — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches team with 18 years experience. Call 0434 030 222.",
+    images: ['https://www.wcpainting.com.au/og-image.jpg'],
+  },
 };
 
 const faqs = [
@@ -27,9 +48,36 @@ const faqs = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.wcpainting.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Northern Beaches Painters",
+      "item": "https://www.wcpainting.com.au/painters/northern-beaches"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Painter Narrabeen",
+      "item": "https://www.wcpainting.com.au/painters/narrabeen"
+    }
+  ]
+};
+
 export default function NarrabeenPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-gradient-to-br from-[#0066CC] to-[#1a1a2e] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-blue-300 text-sm font-medium mb-3">
@@ -41,7 +89,7 @@ export default function NarrabeenPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link href="/contact" className="bg-white text-blue-700 font-semibold px-7 py-3 rounded-lg hover:bg-blue-50 transition-colors">Get a Free Quote</Link>
-            <a href="tel:0434030222" className="border-2 border-white text-white font-semibold px-7 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition-colors">0434 030 222</a>
+            <a href="tel:+61434030222" className="border-2 border-white text-white font-semibold px-7 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition-colors">0434 030 222</a>
           </div>
         </div>
       </section>
@@ -83,7 +131,7 @@ export default function NarrabeenPage() {
         heading="Get a free quote in Narrabeen"
         body="We'll visit your home, assess the job, and give you a clear, detailed quote with no vague estimates."
         primaryCTA={{ text: 'Request a Free Quote', href: '/contact' }}
-        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:0434030222' }}
+        secondaryCTA={{ text: 'Call 0434 030 222', href: 'tel:+61434030222' }}
       />
 
       <section className="py-12 px-4 bg-white">
