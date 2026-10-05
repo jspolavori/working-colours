@@ -1,0 +1,44 @@
+---
+title: Shop all | Coxilo
+description: Shop Coxilo sleep essentials. Start with the Coxilo Contour Pillow, available as a single, a pair or a set of four. Prices in A$.
+page: collection
+---
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="{{link:}}">Home</a></li>
+      <li><span aria-current="page">Shop</span></li>
+    </ol>
+  </nav>
+</div>
+<section class="page-head wrap">
+  <h1 class="h1">Shop</h1>
+  <p class="lede">We're starting small, with one carefully chosen pillow. New sleep essentials will appear here as they're confirmed.</p>
+</section>
+
+<!-- Collections render from catalog.json. Only collections with an active product are shown. -->
+<div class="wrap collection" data-collection-list>
+  <section class="collection__group" id="pillows" aria-labelledby="pillows-title">
+    <h2 class="h3" id="pillows-title">Pillows</h2>
+    <ul class="product-grid" role="list">
+      <li class="product-card">
+        <a class="product-card__link" href="{{link:products/contour-pillow/}}">
+          {{image:contour-pillow:0:eager}}
+          <span class="product-card__title">Coxilo Contour Pillow</span>
+          <span class="product-card__meta">Single, pair or set of four</span>
+          <span class="product-card__price">From {{from:contour-pillow}}</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <p class="fine">{{store:pricingNote}}</p>
+</div>
+
+<section class="section section--oat">
+  <div class="wrap bundles-section">
+    <div class="section-head">
+      <h2 class="h2">Choose your set</h2>
+    </div>
+    {{> bundles}}
+  </div>
+</section>

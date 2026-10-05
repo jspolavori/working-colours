@@ -1,0 +1,25 @@
+<div class="announcement" role="note"><p>{{store:announcement}}</p></div>
+<header class="header">
+  <div class="header__inner wrap">
+    <button class="icon-btn header__menu" type="button" data-open-menu aria-haspopup="dialog" aria-controls="menu-dialog">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="visually-hidden">Open menu</span>
+    </button>
+    <a class="header__logo" href="{{link:}}" aria-label="Coxilo home">{{> wordmark}}</a>
+    <nav class="header__nav" aria-label="Main">
+      <ul>
+        <li><a href="{{link:collections/all/}}" data-nav="shop">Shop</a></li>
+        <li><a href="{{link:pages/our-story/}}" data-nav="story">Our story</a></li>
+        <li><a href="{{link:pages/faqs/}}" data-nav="faqs">FAQs</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <span class="currency" title="All prices are in Australian dollars"><span aria-hidden="true">A$</span> AUD</span>
+      <button class="icon-btn bag-btn" type="button" data-open-cart aria-haspopup="dialog" aria-controls="cart-dialog">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M5 8h14l-1 12.5H6L5 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="bag-btn__count" data-cart-count aria-hidden="true">0</span>
+        <span class="visually-hidden" data-cart-label>Shopping bag, empty</span>
+      </button>
+    </div>
+  </div>
+</header>

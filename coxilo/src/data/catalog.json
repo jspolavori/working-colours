@@ -1,0 +1,67 @@
+{
+  "_readme": "Single source of truth for store settings, products, variants and prices. Prices are in AUD cents. Edit here, then run `npm run build`.",
+  "store": {
+    "name": "Coxilo",
+    "tagline": "Comfort comes home.",
+    "announcement": "A little more comfort. Every day.",
+    "currency": "AUD",
+    "currencySymbol": "A$",
+    "locale": "en-AU",
+    "contactEmail": "",
+    "pricingStatus": "preview",
+    "pricingNote": "Preview pricing. Final prices will be confirmed before launch.",
+    "checkoutConnected": false
+  },
+  "collections": [
+    { "handle": "pillows", "title": "Pillows", "description": "Contoured comfort for every night." },
+    { "handle": "pillowcases", "title": "Pillowcases", "description": "Soft covers to pair with your pillow." },
+    { "handle": "sleep-accessories", "title": "Sleep accessories", "description": "Small things for a calmer bedroom." }
+  ],
+  "products": [
+    {
+      "handle": "contour-pillow",
+      "title": "Coxilo Contour Pillow",
+      "status": "active",
+      "collection": "pillows",
+      "url": "products/contour-pillow/",
+      "summary": "A sculpted ivory pillow with a central resting area, gently raised curved edges and a softly textured cover.",
+      "colour": { "name": "Ivory", "verified": false },
+      "images": [
+        {
+          "file": "coxilo-contour-pillow-01-studio.jpg",
+          "conceptUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_2zfyo0iqnL6QrIUSQF38OX1zz6h/hf_20261005_233949_bffb2a26-28cf-4ec4-aa6c-ff6dab7b0669.png",
+          "alt": "The Coxilo Contour Pillow in ivory, photographed on a plain ivory background",
+          "ratio": "4 / 3",
+          "concept": true
+        },
+        {
+          "file": "coxilo-contour-pillow-02-linen-bedding.jpg",
+          "conceptUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_2zfyo0iqnL6QrIUSQF38OX1zz6h/hf_20261005_234121_9e804e7b-3350-489b-a80c-c655e2dc0ef7.png",
+          "alt": "The contour pillow resting on oatmeal and ivory linen bedding in soft morning light",
+          "ratio": "4 / 3",
+          "concept": true
+        },
+        {
+          "file": "coxilo-contour-pillow-03-contour-detail.jpg",
+          "conceptUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_2zfyo0iqnL6QrIUSQF38OX1zz6h/hf_20261005_234123_c78d831b-4602-437d-8e8e-7daae55ffde3.png",
+          "alt": "Close-up of the pillow's curved edge dipping into the central resting area, showing the textured cover",
+          "ratio": "4 / 5",
+          "concept": true
+        },
+        {
+          "file": "coxilo-contour-pillow-04-bedroom.jpg",
+          "conceptUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_2zfyo0iqnL6QrIUSQF38OX1zz6h/hf_20261005_234122_9b7a1389-1855-4a4f-bb66-32716ca524c3.png",
+          "alt": "A calm bedroom with linen bedding and the ivory contour pillow at the head of the bed",
+          "ratio": "16 / 9",
+          "concept": true
+        }
+      ],
+      "variants": [
+        { "id": "contour-pillow-single", "handle": "single", "label": "Single", "pillows": 1, "price": 7900 },
+        { "id": "contour-pillow-pair", "handle": "pair", "label": "Pair", "pillows": 2, "price": 13900 },
+        { "id": "contour-pillow-four", "handle": "four", "label": "Set of four", "pillows": 4, "price": 25900 }
+      ],
+      "defaultVariant": "contour-pillow-pair"
+    }
+  ]
+}

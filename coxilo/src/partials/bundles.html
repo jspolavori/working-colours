@@ -1,0 +1,27 @@
+<ul class="bundles" role="list">
+  <li class="bundle">
+    <h3 class="bundle__name">Single</h3>
+    <p class="bundle__count">1 pillow</p>
+    <p class="bundle__price">{{price:contour-pillow-single}}</p>
+    <p class="bundle__each">For your side of the bed.</p>
+    <button class="btn btn--outline btn--block" type="button" data-add-variant="contour-pillow-single">Add single to bag</button>
+    <a class="bundle__link" href="{{link:products/contour-pillow/#bundle-single}}">View details</a>
+  </li>
+  <li class="bundle bundle--featured">
+    <h3 class="bundle__name">Pair</h3>
+    <p class="bundle__count">2 pillows</p>
+    <p class="bundle__price">{{price:contour-pillow-pair}}</p>
+    <p class="bundle__each">{{each:contour-pillow-pair}} per pillow. One for each side.</p>
+    <button class="btn btn--primary btn--block" type="button" data-add-variant="contour-pillow-pair">Add pair to bag</button>
+    <a class="bundle__link" href="{{link:products/contour-pillow/#bundle-pair}}">View details</a>
+  </li>
+  <li class="bundle">
+    <h3 class="bundle__name">Set of four</h3>
+    <p class="bundle__count">4 pillows</p>
+    <p class="bundle__price">{{price:contour-pillow-four}}</p>
+    <p class="bundle__each">{{each:contour-pillow-four}} per pillow. For the main bedroom and the spare.</p>
+    <button class="btn btn--outline btn--block" type="button" data-add-variant="contour-pillow-four">Add set of four to bag</button>
+    <a class="bundle__link" href="{{link:products/contour-pillow/#bundle-four}}">View details</a>
+  </li>
+</ul>
+<p class="fine">{{store:pricingNote}}</p>

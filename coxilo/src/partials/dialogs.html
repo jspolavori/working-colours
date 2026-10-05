@@ -1,0 +1,74 @@
+<dialog class="drawer drawer--left" id="menu-dialog" aria-labelledby="menu-title">
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="menu-title">Menu</h2>
+    <button class="icon-btn" type="button" data-close-dialog>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="visually-hidden">Close menu</span>
+    </button>
+  </div>
+  <nav class="menu" aria-label="Mobile">
+    <ul>
+      <li><a href="{{link:}}">Home</a></li>
+      <li><a href="{{link:collections/all/}}">Shop</a></li>
+      <li><a href="{{link:products/contour-pillow/}}">Contour Pillow</a></li>
+      <li><a href="{{link:pages/our-story/}}">Our story</a></li>
+      <li><a href="{{link:pages/faqs/}}">FAQs</a></li>
+      <li><a href="{{link:pages/contact/}}">Contact</a></li>
+    </ul>
+  </nav>
+  <p class="menu__note">All prices in Australian dollars (A$ AUD).</p>
+</dialog>
+
+<dialog class="drawer drawer--right" id="cart-dialog" aria-labelledby="cart-title">
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="cart-title" tabindex="-1">Your bag</h2>
+    <button class="icon-btn" type="button" data-close-dialog>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="visually-hidden">Close bag</span>
+    </button>
+  </div>
+  <div class="cart" data-cart-root>
+    <div class="cart__empty" data-cart-empty>
+      <p class="cart__empty-title">Your bag is empty.</p>
+      <p>Start with the pillow at the heart of the range.</p>
+      <a class="btn btn--primary" href="{{link:products/contour-pillow/}}">Discover the pillow</a>
+      <button class="btn btn--ghost" type="button" data-close-dialog>Continue shopping</button>
+    </div>
+    <ul class="cart__lines" data-cart-lines aria-label="Items in your bag"></ul>
+    <div class="cart__foot" data-cart-foot>
+      <dl class="cart__totals">
+        <div><dt>Subtotal</dt><dd data-cart-subtotal>A$0</dd></div>
+        <div class="cart__meta"><dt>In your bag</dt><dd data-cart-summary></dd></div>
+      </dl>
+      <p class="cart__note">{{store:pricingNote}} Delivery costs will be confirmed before checkout opens.</p>
+      <button class="btn btn--primary btn--block" type="button" data-checkout aria-describedby="checkout-help" aria-controls="checkout-status" aria-expanded="false">Checkout</button>
+      <p class="cart__help" id="checkout-help">Checkout isn't connected yet. No payment can be taken and no order will be placed.</p>
+      <div class="notice" id="checkout-status" data-checkout-status hidden tabindex="-1">
+        <p><strong>Checkout opens at launch.</strong> Coxilo is in preview while we confirm our supplier, final prices and delivery. Your bag is saved on this device, so it will be here when you come back.</p>
+        <p><a href="{{link:pages/store-status/}}">What's ready and what's next</a></p>
+      </div>
+      <button class="btn btn--ghost btn--block" type="button" data-close-dialog>Continue shopping</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="lightbox" id="lightbox-dialog" aria-label="Enlarged product image">
+  <button class="icon-btn lightbox__close" type="button" data-close-dialog>
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <span class="visually-hidden">Close enlarged image</span>
+  </button>
+  <div class="lightbox__stage" data-lightbox-stage></div>
+  <div class="lightbox__controls">
+    <button class="icon-btn" type="button" data-lightbox-prev>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="visually-hidden">Previous image</span>
+    </button>
+    <p class="lightbox__count" data-lightbox-count aria-live="polite"></p>
+    <button class="icon-btn" type="button" data-lightbox-next>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="visually-hidden">Next image</span>
+    </button>
+  </div>
+</dialog>
+
+<div class="visually-hidden" aria-live="polite" data-announcer></div>
