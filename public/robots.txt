@@ -1,13 +1,17 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/
+# Note: /_next/ must NOT be disallowed. Next.js serves every stylesheet,
+# script, font and optimised image from /_next/ — blocking it stops Google
+# from rendering pages (it saw unstyled pages with broken images/huge icons).
 Allow: /
 
 # OpenAI's search crawler — allowed to access public pages, same as other
 # search engines. This is separate from GPTBot (AI training), which is not
 # specifically restricted here and falls under the general "*" rule above.
 User-agent: OAI-SearchBot
+Disallow: /admin/
+Disallow: /api/
 Allow: /
 
 Sitemap: https://www.wcpainting.com.au/sitemap.xml

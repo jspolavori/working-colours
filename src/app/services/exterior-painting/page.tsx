@@ -116,7 +116,7 @@ export default function ExteriorPaintingPage() {
                 'Coastal-exposed surfaces and salt-affected areas',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-gray-700">
-                  <svg
+                  <svg width={20} height={20}
                     className="w-5 h-5 text-[#0066CC] flex-shrink-0"
                     fill="none"
                     stroke="currentColor"

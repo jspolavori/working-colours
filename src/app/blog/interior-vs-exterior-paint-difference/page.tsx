@@ -138,7 +138,7 @@ export default function InteriorVsExteriorPaintPage() {
               { label: 'Good touch-up ability', detail: "Walls get scuffed and marked. Interior paints are formulated to allow touch-ups that blend in, rather than showing as patches." },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <div>
@@ -161,7 +161,7 @@ export default function InteriorVsExteriorPaintPage() {
               { label: 'Salt resistance', detail: "On the Northern Beaches, salt air is a significant factor. Exterior paints for coastal environments need strong binder systems and moisture resistance to cope with ongoing salt exposure." },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <div>

@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Cromer | Working Colours Painting Services',
+  title: 'Painters Cromer | House Painting Since 2008 | Working Colours',
   description: "Painter Cromer — interior, exterior and timber work for well-established family homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/cromer',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Cromer | Working Colours Painting Services',
+    title: 'Painters Cromer | House Painting Since 2008 | Working Colours',
     description: "Painter Cromer — interior, exterior and timber work for well-established family homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/cromer',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Cromer | Working Colours Painting Services',
+    title: 'Painters Cromer | House Painting Since 2008 | Working Colours',
     description: "Painter Cromer — interior, exterior and timber work for well-established family homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Cromer",
+      "name": "Painters in Cromer",
       "item": "https://www.wcpainting.com.au/painters/cromer"
     }
   ]
@@ -82,7 +82,7 @@ export default function CromerPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Cromer
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Cromer</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Cromer</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Cromer is a well-established family suburb with quiet streets and a solid mix of brick and brick veneer homes. Residents here value reliability and quality — and the properties reflect that. We work in Cromer regularly and know what the local housing stock needs.
           </p>
@@ -112,7 +112,7 @@ export default function CromerPage() {
                 'Full and partial residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -140,6 +140,7 @@ export default function CromerPage() {
             <Link href="/painters/collaroy" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Collaroy</Link>
             <Link href="/painters/brookvale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Brookvale</Link>
             <Link href="/painters/belrose" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Belrose</Link>
+            <Link href="/painters/narraweena" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Narraweena</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>
             <Link href="/services/residential-repaints" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Residential Repaints</Link>

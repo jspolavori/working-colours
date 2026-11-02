@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Curl Curl | Working Colours Painting Services',
+  title: 'Painters Curl Curl | House Painting Since 2008 | Working Colours',
   description: "Painter Curl Curl — exterior repaints, interior painting, timber staining for coastal homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/curl-curl',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Curl Curl | Working Colours Painting Services',
+    title: 'Painters Curl Curl | House Painting Since 2008 | Working Colours',
     description: "Painter Curl Curl — exterior repaints, interior painting, timber staining for coastal homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/curl-curl',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Curl Curl | Working Colours Painting Services',
+    title: 'Painters Curl Curl | House Painting Since 2008 | Working Colours',
     description: "Painter Curl Curl — exterior repaints, interior painting, timber staining for coastal homes. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Curl Curl",
+      "name": "Painters in Curl Curl",
       "item": "https://www.wcpainting.com.au/painters/curl-curl"
     }
   ]
@@ -80,7 +80,7 @@ export default function CurlCurlPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Curl Curl
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Curl Curl</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Curl Curl</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Curl Curl is a tight-knit coastal community where homes take a real hammering from the ocean air. Getting the right paint system — and preparing surfaces properly — makes all the difference to how long your paint job lasts.
           </p>

@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter North Narrabeen | Working Colours Painting Services',
+  title: 'Painters North Narrabeen | House Painting Since 2008 | Working Colours',
   description: "Painter North Narrabeen — interior, exterior, timber and deck work for beach and lagoon-area homes. 18 years experience. Free quote. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/north-narrabeen',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter North Narrabeen | Working Colours Painting Services',
+    title: 'Painters North Narrabeen | House Painting Since 2008 | Working Colours',
     description: "Painter North Narrabeen — interior, exterior, timber and deck work for beach and lagoon-area homes. 18 years experience. Free quote. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/north-narrabeen',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter North Narrabeen | Working Colours Painting Services',
+    title: 'Painters North Narrabeen | House Painting Since 2008 | Working Colours',
     description: "Painter North Narrabeen — interior, exterior, timber and deck work for beach and lagoon-area homes. 18 years experience. Free quote. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter North Narrabeen",
+      "name": "Painters in North Narrabeen",
       "item": "https://www.wcpainting.com.au/painters/north-narrabeen"
     }
   ]
@@ -82,7 +82,7 @@ export default function NorthNarrabeenPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             North Narrabeen
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter North Narrabeen</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in North Narrabeen</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             North Narrabeen is a relaxed beach suburb sitting between Narrabeen Beach and the Narrabeen Lagoon. The community is a mix of long-time local families, surf culture, and newer residents drawn to the lifestyle. Housing is a mix of older fibro and brick homes alongside more recently renovated properties.
           </p>
@@ -112,7 +112,7 @@ export default function NorthNarrabeenPage() {
                 'Full and partial residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}

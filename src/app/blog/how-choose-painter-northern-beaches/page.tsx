@@ -190,7 +190,7 @@ export default function HowChoosePainterNorthernBeachesPage() {
                 'Clear payment terms and timeline',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={16} height={16} className="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}

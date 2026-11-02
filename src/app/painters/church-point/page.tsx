@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Church Point | Working Colours Painting Services',
+  title: 'Painters Church Point | House Painting Since 2008 | Working Colours',
   description: "Painter Church Point — exterior repaints, timber staining and deck maintenance for waterfront and bushland homes. 18 years experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/church-point',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Church Point | Working Colours Painting Services',
+    title: 'Painters Church Point | House Painting Since 2008 | Working Colours',
     description: "Painter Church Point — exterior repaints, timber staining and deck maintenance for waterfront and bushland homes. 18 years experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/church-point',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Church Point | Working Colours Painting Services',
+    title: 'Painters Church Point | House Painting Since 2008 | Working Colours',
     description: "Painter Church Point — exterior repaints, timber staining and deck maintenance for waterfront and bushland homes. 18 years experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Church Point",
+      "name": "Painters in Church Point",
       "item": "https://www.wcpainting.com.au/painters/church-point"
     }
   ]
@@ -80,7 +80,7 @@ export default function ChurchPointPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Church Point
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Church Point</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Church Point</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Church Point is a unique waterfront community on Pittwater with a character all its own. Homes here are exposed to the full range of waterfront conditions — and timber, in particular, needs regular care to stay protected and looking its best.
           </p>

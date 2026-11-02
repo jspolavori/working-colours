@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Bilgola | Working Colours Painting Services',
+  title: 'Painters Bilgola | House Painting Since 2008 | Working Colours',
   description: "Painter Bilgola — exterior and interior repaints, timber staining for coastal Bilgola Beach homes. 18 years Northern Beaches experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/bilgola',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Bilgola | Working Colours Painting Services',
+    title: 'Painters Bilgola | House Painting Since 2008 | Working Colours',
     description: "Painter Bilgola — exterior and interior repaints, timber staining for coastal Bilgola Beach homes. 18 years Northern Beaches experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/bilgola',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Bilgola | Working Colours Painting Services',
+    title: 'Painters Bilgola | House Painting Since 2008 | Working Colours',
     description: "Painter Bilgola — exterior and interior repaints, timber staining for coastal Bilgola Beach homes. 18 years Northern Beaches experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Bilgola",
+      "name": "Painters in Bilgola",
       "item": "https://www.wcpainting.com.au/painters/bilgola"
     }
   ]
@@ -80,7 +80,7 @@ export default function BilgolaPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Bilgola
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Bilgola</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Bilgola</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Bilgola is one of the Northern Beaches&apos; most beautiful and tightly held coastal communities. Homes here are exposed to the full force of ocean air — getting the right paint system and preparation is what separates a paint job that lasts from one that doesn&apos;t.
           </p>

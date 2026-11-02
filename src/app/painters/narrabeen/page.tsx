@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Narrabeen | Working Colours Painting Services',
+  title: 'Painters Narrabeen | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Narrabeen — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches team with 18 years experience. Call 0434 030 222.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Narrabeen | Working Colours Painting Services',
+    title: 'Painters Narrabeen | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Narrabeen — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches team with 18 years experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/narrabeen',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Narrabeen | Working Colours Painting Services',
+    title: 'Painters Narrabeen | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Narrabeen — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches team with 18 years experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Narrabeen",
+      "name": "Painters in Narrabeen",
       "item": "https://www.wcpainting.com.au/painters/narrabeen"
     }
   ]
@@ -83,7 +83,7 @@ export default function NarrabeenPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Narrabeen
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Narrabeen</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Narrabeen</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Narrabeen is an iconic location — the lagoon, the beach, and a strong community of homeowners who take pride in their properties. It&apos;s also a suburb with significant timber housing stock and real moisture exposure from both ocean and lagoon sides.
           </p>

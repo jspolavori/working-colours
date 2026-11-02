@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Davidson | Working Colours Painting Services',
+  title: 'Painters Davidson | House Painting Since 2008 | Working Colours',
   description: "Painter Davidson — interior and exterior repaints, deck staining, timber restoration. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/davidson',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Davidson | Working Colours Painting Services',
+    title: 'Painters Davidson | House Painting Since 2008 | Working Colours',
     description: "Painter Davidson — interior and exterior repaints, deck staining, timber restoration. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/davidson',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Davidson | Working Colours Painting Services',
+    title: 'Painters Davidson | House Painting Since 2008 | Working Colours',
     description: "Painter Davidson — interior and exterior repaints, deck staining, timber restoration. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Davidson",
+      "name": "Painters in Davidson",
       "item": "https://www.wcpainting.com.au/painters/davidson"
     }
   ]
@@ -80,7 +80,7 @@ export default function DavidsonPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Davidson
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Davidson</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Davidson</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Davidson is a leafy suburb on the upper Northern Beaches with a mix of established and newer homes. We paint houses throughout the area, bringing the same level of preparation and finish whether it&apos;s a single room or a full exterior repaint.
           </p>

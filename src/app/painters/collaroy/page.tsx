@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Collaroy | Working Colours Painting Services',
+  title: 'Painters Collaroy | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Collaroy — Working Colours. Coastal exposure specialists. Interior, exterior, timber staining. Northern Beaches team. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Collaroy | Working Colours Painting Services',
+    title: 'Painters Collaroy | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Collaroy — Working Colours. Coastal exposure specialists. Interior, exterior, timber staining. Northern Beaches team. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/collaroy',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Collaroy | Working Colours Painting Services',
+    title: 'Painters Collaroy | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Collaroy — Working Colours. Coastal exposure specialists. Interior, exterior, timber staining. Northern Beaches team. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Collaroy",
+      "name": "Painters in Collaroy",
       "item": "https://www.wcpainting.com.au/painters/collaroy"
     }
   ]
@@ -83,7 +83,7 @@ export default function CollaroyPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Collaroy
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Collaroy</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Collaroy</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Collaroy faces one of the most highly exposed coastlines on the Northern Beaches. The salt contamination, UV intensity, and spray from the ocean make proper preparation and product selection critical — not optional.
           </p>

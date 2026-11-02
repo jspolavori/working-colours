@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Mona Vale | Working Colours Painting Services',
+  title: 'Painters Mona Vale | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Mona Vale — Working Colours. Interior, exterior, deck staining. Northern Beaches specialists with 18 years experience. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Mona Vale | Working Colours Painting Services',
+    title: 'Painters Mona Vale | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Mona Vale — Working Colours. Interior, exterior, deck staining. Northern Beaches specialists with 18 years experience. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/mona-vale',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Mona Vale | Working Colours Painting Services',
+    title: 'Painters Mona Vale | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Mona Vale — Working Colours. Interior, exterior, deck staining. Northern Beaches specialists with 18 years experience. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Mona Vale",
+      "name": "Painters in Mona Vale",
       "item": "https://www.wcpainting.com.au/painters/mona-vale"
     }
   ]
@@ -83,7 +83,7 @@ export default function MonaValePage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Mona Vale
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Mona Vale</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Mona Vale</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Mona Vale sits at the centre of the Northern Beaches — a family-oriented suburb with a solid mix of brick and rendered homes from the 1970s and 1980s, along with a growing number of renovations and new builds. Decks and outdoor areas are a feature of many properties here.
           </p>
@@ -141,6 +141,7 @@ export default function MonaValePage() {
             <Link href="/painters/newport" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Newport</Link>
             <Link href="/painters/warriewood" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Warriewood</Link>
             <Link href="/painters/narrabeen" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Narrabeen</Link>
+            <Link href="/painters/church-point" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Church Point</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
           </div>
         </div>

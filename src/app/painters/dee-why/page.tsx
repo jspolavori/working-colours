@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Dee Why | Working Colours Painting Services',
+  title: 'Painters Dee Why | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Dee Why — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches specialists. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Dee Why | Working Colours Painting Services',
+    title: 'Painters Dee Why | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Dee Why — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches specialists. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/dee-why',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Dee Why | Working Colours Painting Services',
+    title: 'Painters Dee Why | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Dee Why — Working Colours. Interior, exterior, timber and deck staining. Local Northern Beaches specialists. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Dee Why",
+      "name": "Painters in Dee Why",
       "item": "https://www.wcpainting.com.au/painters/dee-why"
     }
   ]
@@ -83,7 +83,7 @@ export default function DeeWhyPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Dee Why
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Dee Why</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Dee Why</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Dee Why is one of the largest and most diverse suburbs on the Northern Beaches — a mix of apartments, brick homes, older renders, and beachside properties. Salt air exposure is a real factor here, and preparation matters more than anywhere.
           </p>
@@ -141,6 +141,8 @@ export default function DeeWhyPage() {
             <Link href="/painters/collaroy" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Collaroy</Link>
             <Link href="/painters/narrabeen" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Narrabeen</Link>
             <Link href="/painters/freshwater" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Freshwater</Link>
+            <Link href="/painters/curl-curl" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Curl Curl</Link>
+            <Link href="/painters/narraweena" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Narraweena</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
           </div>
         </div>

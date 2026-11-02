@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
-import { headers } from 'next/headers';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BUSINESS } from '@/lib/business';
+import { HideOnFunnel, SiteMain } from '@/components/SiteChrome';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -103,10 +103,7 @@ const localBusinessSchema = {
   // aggregateRating intentionally omitted here until review counts can be verified.
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headersList = await headers();
-  const pathname = headersList.get('x-pathname') ?? '';
-  const isFunnel = pathname.startsWith('/paint-like-a-pro');
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-AU" className={inter.variable}>
       <head>
@@ -143,9 +140,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        {!isFunnel && <Navbar />}
-        <main className={!isFunnel ? 'pb-16 md:pb-0' : ''}>{children}</main>
-        {!isFunnel && <Footer />}
+        <HideOnFunnel><Navbar /></HideOnFunnel>
+        <SiteMain>{children}</SiteMain>
+        <HideOnFunnel><Footer /></HideOnFunnel>
       </body>
     </html>
   );

@@ -131,7 +131,7 @@ export default function TimberRestorationArticlePage() {
               { label: 'Minor staining or discolouration', detail: 'Tannin bleed, iron staining, or weather marks can be treated with appropriate solutions before staining.' },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <div>
@@ -151,7 +151,7 @@ export default function TimberRestorationArticlePage() {
               { label: 'Pest damage', detail: 'Borer, termite, or other pest damage may require replacement of affected boards or sections regardless of surface appearance.' },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 <div>

@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Freshwater | Working Colours Painting Services',
+  title: 'Painters Freshwater | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Freshwater — Working Colours. Interior, exterior, timber staining and deck work. Trusted by Freshwater homeowners. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Freshwater | Working Colours Painting Services',
+    title: 'Painters Freshwater | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Freshwater — Working Colours. Interior, exterior, timber staining and deck work. Trusted by Freshwater homeowners. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/freshwater',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Freshwater | Working Colours Painting Services',
+    title: 'Painters Freshwater | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Freshwater — Working Colours. Interior, exterior, timber staining and deck work. Trusted by Freshwater homeowners. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Freshwater",
+      "name": "Painters in Freshwater",
       "item": "https://www.wcpainting.com.au/painters/freshwater"
     }
   ]
@@ -85,7 +85,7 @@ export default function FreshwaterPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Freshwater
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Freshwater</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Freshwater</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Freshwater is a tight-knit suburb with a strong identity and a mix of housing that spans a century of building styles. Federation homes, interwar bungalows, brick veneer builds, and modern renovations sit side by side. Each has different needs — and we know how to handle all of them.
           </p>
@@ -115,7 +115,7 @@ export default function FreshwaterPage() {
                 'Full residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -142,6 +142,7 @@ export default function FreshwaterPage() {
             <Link href="/painters/manly" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Manly</Link>
             <Link href="/painters/balgowlah" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Balgowlah</Link>
             <Link href="/painters/seaforth" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Seaforth</Link>
+            <Link href="/painters/curl-curl" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Curl Curl</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>

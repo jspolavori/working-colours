@@ -129,7 +129,7 @@ export default function HowToChoosePainterArticlePage() {
               { label: 'Cannot provide references or examples', detail: 'A painter with a solid track record can point you to previous clients or show photos of completed work. Inability to do so suggests limited experience or a reason to avoid drawing attention to past jobs.' },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 <div>
@@ -150,7 +150,7 @@ export default function HowToChoosePainterArticlePage() {
               { label: 'They have current insurance', detail: "Public liability insurance is in order and they can provide a certificate of currency on request." },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <div>

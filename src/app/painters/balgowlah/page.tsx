@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Balgowlah | Working Colours Painting Services',
+  title: 'Painters Balgowlah | House Painting Since 2008 | Working Colours',
   description: "Painter Balgowlah — interior, exterior, and timber work for established family homes near Manly. 18 years experience on the Northern Beaches. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/balgowlah',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Balgowlah | Working Colours Painting Services',
+    title: 'Painters Balgowlah | House Painting Since 2008 | Working Colours',
     description: "Painter Balgowlah — interior, exterior, and timber work for established family homes near Manly. 18 years experience on the Northern Beaches. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/balgowlah',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Balgowlah | Working Colours Painting Services',
+    title: 'Painters Balgowlah | House Painting Since 2008 | Working Colours',
     description: "Painter Balgowlah — interior, exterior, and timber work for established family homes near Manly. 18 years experience on the Northern Beaches. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Balgowlah",
+      "name": "Painters in Balgowlah",
       "item": "https://www.wcpainting.com.au/painters/balgowlah"
     }
   ]
@@ -82,7 +82,7 @@ export default function BalgowlahPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Balgowlah
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Balgowlah</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Balgowlah</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Balgowlah is an established family suburb just inland from Manly — well-kept streets, a mix of brick homes and weatherboard, and homeowners who take genuine pride in their properties. We work throughout Balgowlah regularly and are familiar with what the local housing stock needs.
           </p>
@@ -112,7 +112,7 @@ export default function BalgowlahPage() {
                 'Full and partial residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -139,6 +139,8 @@ export default function BalgowlahPage() {
             <Link href="/painters/manly" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Manly</Link>
             <Link href="/painters/seaforth" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Seaforth</Link>
             <Link href="/painters/freshwater" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Freshwater</Link>
+            <Link href="/painters/manly-vale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Manly Vale</Link>
+            <Link href="/painters/allambie-heights" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Allambie Heights</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>

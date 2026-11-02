@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Killarney Heights | Working Colours Painting Services',
+  title: 'Painters Killarney Heights | House Painting Since 2008 | Working Colours',
   description: "Painter Killarney Heights — interior and exterior repaints, timber staining, deck maintenance. 18 years Northern Beaches experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/killarney-heights',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Killarney Heights | Working Colours Painting Services',
+    title: 'Painters Killarney Heights | House Painting Since 2008 | Working Colours',
     description: "Painter Killarney Heights — interior and exterior repaints, timber staining, deck maintenance. 18 years Northern Beaches experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/killarney-heights',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Killarney Heights | Working Colours Painting Services',
+    title: 'Painters Killarney Heights | House Painting Since 2008 | Working Colours',
     description: "Painter Killarney Heights — interior and exterior repaints, timber staining, deck maintenance. 18 years Northern Beaches experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Killarney Heights",
+      "name": "Painters in Killarney Heights",
       "item": "https://www.wcpainting.com.au/painters/killarney-heights"
     }
   ]
@@ -80,7 +80,7 @@ export default function KillarneyHeightsPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Killarney Heights
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Killarney Heights</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Killarney Heights</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Killarney Heights is an established residential suburb with quality homes and a strong community. Whether you&apos;re updating the interior, refreshing the exterior, or maintaining the timber on your home, we do it properly.
           </p>

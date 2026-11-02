@@ -35,6 +35,8 @@ export default function FAQSection({
               >
                 <span className="font-semibold text-[#1a1a2e] text-base">{faq.question}</span>
                 <svg
+                  width={20}
+                  height={20}
                   className={`w-5 h-5 text-[#0066CC] flex-shrink-0 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}

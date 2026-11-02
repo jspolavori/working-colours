@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Frenchs Forest | Working Colours Painting Services',
+  title: 'Painters Frenchs Forest | House Painting Since 2008 | Working Colours',
   description: "Painter Frenchs Forest — interior, exterior, timber and deck work for bushland homes on larger blocks. 18 years Northern Beaches experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/frenchs-forest',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Frenchs Forest | Working Colours Painting Services',
+    title: 'Painters Frenchs Forest | House Painting Since 2008 | Working Colours',
     description: "Painter Frenchs Forest — interior, exterior, timber and deck work for bushland homes on larger blocks. 18 years Northern Beaches experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/frenchs-forest',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Frenchs Forest | Working Colours Painting Services',
+    title: 'Painters Frenchs Forest | House Painting Since 2008 | Working Colours',
     description: "Painter Frenchs Forest — interior, exterior, timber and deck work for bushland homes on larger blocks. 18 years Northern Beaches experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Frenchs Forest",
+      "name": "Painters in Frenchs Forest",
       "item": "https://www.wcpainting.com.au/painters/frenchs-forest"
     }
   ]
@@ -82,7 +82,7 @@ export default function FrenchsForestPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Frenchs Forest
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Frenchs Forest</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Frenchs Forest</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Frenchs Forest is a bushland suburb on larger blocks — a mix of established homes and newer development, set among trees and natural surroundings. The environment is beautiful, but it creates specific challenges for paint and timber that require careful handling.
           </p>
@@ -112,7 +112,7 @@ export default function FrenchsForestPage() {
                 'Doors, trims, and window frames',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -140,6 +140,9 @@ export default function FrenchsForestPage() {
             <Link href="/painters/seaforth" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Seaforth</Link>
             <Link href="/painters/brookvale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Brookvale</Link>
             <Link href="/painters/cromer" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Cromer</Link>
+            <Link href="/painters/forestville" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Forestville</Link>
+            <Link href="/painters/davidson" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Davidson</Link>
+            <Link href="/painters/killarney-heights" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Killarney Heights</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>
             <Link href="/services/residential-repaints" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Residential Repaints</Link>

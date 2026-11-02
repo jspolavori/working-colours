@@ -144,7 +144,7 @@ export default function PresaleRepaintArticlePage() {
               { label: 'Bathrooms and laundry', detail: "These rooms show wear quickly. Yellowing ceilings, scuffed doors, and dirty silicone are immediately noticed. A coat of paint and fresh silicone makes a big difference." },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <div>

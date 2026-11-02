@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Terrey Hills | Working Colours Painting Services',
+  title: 'Painters Terrey Hills | House Painting Since 2008 | Working Colours',
   description: "Painter Terrey Hills — interior and exterior repaints, deck staining, large acreage property painting. 18 years Northern Beaches experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/terrey-hills',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Terrey Hills | Working Colours Painting Services',
+    title: 'Painters Terrey Hills | House Painting Since 2008 | Working Colours',
     description: "Painter Terrey Hills — interior and exterior repaints, deck staining, large acreage property painting. 18 years Northern Beaches experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/terrey-hills',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Terrey Hills | Working Colours Painting Services',
+    title: 'Painters Terrey Hills | House Painting Since 2008 | Working Colours',
     description: "Painter Terrey Hills — interior and exterior repaints, deck staining, large acreage property painting. 18 years Northern Beaches experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Terrey Hills",
+      "name": "Painters in Terrey Hills",
       "item": "https://www.wcpainting.com.au/painters/terrey-hills"
     }
   ]
@@ -80,7 +80,7 @@ export default function TerreyHillsPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Terrey Hills
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Terrey Hills</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Terrey Hills</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Terrey Hills has a semi-rural character with larger blocks and properties that often include generous outdoor entertaining areas. We service the suburb for residential painting — from interior refreshes to full exterior repaints and timber maintenance.
           </p>

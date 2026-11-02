@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Brookvale | Working Colours Painting Services',
+  title: 'Painters Brookvale | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Brookvale — Working Colours. Interior, exterior and timber work for homes throughout the area. Local Northern Beaches team. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Brookvale | Working Colours Painting Services',
+    title: 'Painters Brookvale | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Brookvale — Working Colours. Interior, exterior and timber work for homes throughout the area. Local Northern Beaches team. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/brookvale',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Brookvale | Working Colours Painting Services',
+    title: 'Painters Brookvale | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Brookvale — Working Colours. Interior, exterior and timber work for homes throughout the area. Local Northern Beaches team. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Brookvale",
+      "name": "Painters in Brookvale",
       "item": "https://www.wcpainting.com.au/painters/brookvale"
     }
   ]
@@ -85,7 +85,7 @@ export default function BrookvalePage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Brookvale
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Brookvale</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Brookvale</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Brookvale sits at the southern gateway to the Northern Beaches — a suburb with a mix of residential housing, light industrial, and commercial areas. The residential pockets here are well-established, with homes that range from older fibro and brick builds to renovated modern properties.
           </p>
@@ -115,7 +115,7 @@ export default function BrookvalePage() {
                 'Full and partial residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -143,6 +143,9 @@ export default function BrookvalePage() {
             <Link href="/painters/collaroy" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Collaroy</Link>
             <Link href="/painters/cromer" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Cromer</Link>
             <Link href="/painters/frenchs-forest" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Frenchs Forest</Link>
+            <Link href="/painters/allambie-heights" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Allambie Heights</Link>
+            <Link href="/painters/curl-curl" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Curl Curl</Link>
+            <Link href="/painters/narraweena" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Narraweena</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>
             <Link href="/services/residential-repaints" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Residential Repaints</Link>

@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Bayview | Working Colours Painting Services',
+  title: 'Painters Bayview | House Painting Since 2008 | Working Colours',
   description: "Painter Bayview — exterior, interior, timber and deck work for Pittwater waterfront and hillside homes. 18 years Northern Beaches experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/bayview',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Bayview | Working Colours Painting Services',
+    title: 'Painters Bayview | House Painting Since 2008 | Working Colours',
     description: "Painter Bayview — exterior, interior, timber and deck work for Pittwater waterfront and hillside homes. 18 years Northern Beaches experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/bayview',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Bayview | Working Colours Painting Services',
+    title: 'Painters Bayview | House Painting Since 2008 | Working Colours',
     description: "Painter Bayview — exterior, interior, timber and deck work for Pittwater waterfront and hillside homes. 18 years Northern Beaches experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Bayview",
+      "name": "Painters in Bayview",
       "item": "https://www.wcpainting.com.au/painters/bayview"
     }
   ]
@@ -82,7 +82,7 @@ export default function BayviewPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Bayview
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Bayview</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Bayview</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Bayview is a quiet, exclusive suburb on Pittwater — home to waterfront properties, boating lifestyle residences, and prestige homes set among native bushland. Properties here are well-maintained and owners expect a high standard of workmanship.
           </p>
@@ -112,7 +112,7 @@ export default function BayviewPage() {
                 'Doors, trims, and window frames',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -139,6 +139,7 @@ export default function BayviewPage() {
             <Link href="/painters/newport" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Newport</Link>
             <Link href="/painters/mona-vale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Mona Vale</Link>
             <Link href="/painters/avalon" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Avalon Beach</Link>
+            <Link href="/painters/church-point" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Church Point</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>

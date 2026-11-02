@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Northern Beaches Sydney | Working Colours Painting Services',
+  title: 'Painters Northern Beaches | Suburbs We Service | Working Colours',
   description: "Residential painting across Sydney's Northern Beaches — interior, exterior, timber staining, deck staining. 18 years experience, 5.0 rating. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/northern-beaches',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Northern Beaches Sydney | Working Colours Painting Services',
+    title: 'Painters Northern Beaches | Suburbs We Service | Working Colours',
     description: "Residential painting across Sydney's Northern Beaches — interior, exterior, timber staining, deck staining. 18 years experience, 5.0 rating. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/northern-beaches',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Northern Beaches Sydney | Working Colours Painting Services',
+    title: 'Painters Northern Beaches | Suburbs We Service | Working Colours',
     description: "Residential painting across Sydney's Northern Beaches — interior, exterior, timber staining, deck staining. 18 years experience, 5.0 rating. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -28,18 +28,22 @@ export const metadata: Metadata = {
 
 const suburbGroups = [
   {
-    label: 'Southern Beaches',
+    label: 'Manly & Southern Beaches',
     suburbs: [
       { name: 'Manly', href: '/painters/manly' },
+      { name: 'Manly Vale', href: '/painters/manly-vale' },
       { name: 'Balgowlah', href: '/painters/balgowlah' },
-      { name: 'Freshwater', href: '/painters/freshwater' },
       { name: 'Seaforth', href: '/painters/seaforth' },
+      { name: 'Freshwater', href: '/painters/freshwater' },
+      { name: 'Curl Curl', href: '/painters/curl-curl' },
+      { name: 'Allambie Heights', href: '/painters/allambie-heights' },
     ],
   },
   {
-    label: 'Central Beaches',
+    label: 'Dee Why & Central Beaches',
     suburbs: [
       { name: 'Dee Why', href: '/painters/dee-why' },
+      { name: 'Narraweena', href: '/painters/narraweena' },
       { name: 'Collaroy', href: '/painters/collaroy' },
       { name: 'Collaroy Plateau', href: '/painters/collaroy-plateau' },
       { name: 'Cromer', href: '/painters/cromer' },
@@ -56,20 +60,26 @@ const suburbGroups = [
     ],
   },
   {
-    label: 'Northern Beaches Mid',
+    label: 'Pittwater',
     suburbs: [
       { name: 'Mona Vale', href: '/painters/mona-vale' },
-      { name: 'Newport', href: '/painters/newport' },
       { name: 'Bayview', href: '/painters/bayview' },
+      { name: 'Church Point', href: '/painters/church-point' },
+      { name: 'Newport', href: '/painters/newport' },
+      { name: 'Bilgola', href: '/painters/bilgola' },
       { name: 'Avalon', href: '/painters/avalon' },
       { name: 'Palm Beach', href: '/painters/palm-beach' },
     ],
   },
   {
-    label: 'Bushland',
+    label: 'Forest District',
     suburbs: [
       { name: 'Frenchs Forest', href: '/painters/frenchs-forest' },
+      { name: 'Forestville', href: '/painters/forestville' },
+      { name: 'Killarney Heights', href: '/painters/killarney-heights' },
+      { name: 'Davidson', href: '/painters/davidson' },
       { name: 'Belrose', href: '/painters/belrose' },
+      { name: 'Terrey Hills', href: '/painters/terrey-hills' },
     ],
   },
 ];
@@ -148,7 +158,7 @@ export default function NorthernBeachesPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Northern Beaches Sydney</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters Across the Northern Beaches</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Working Colours is a premium residential painting company serving the full length of Sydney&apos;s Northern Beaches — from Manly to Palm Beach. We specialise in homes that face the real demands of coastal living.
           </p>

@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Allambie Heights | Working Colours Painting Services',
+  title: 'Painters Allambie Heights | House Painting Since 2008 | Working Colours',
   description: "Painter Allambie Heights — interior and exterior repaints, timber staining, deck staining. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/allambie-heights',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Allambie Heights | Working Colours Painting Services',
+    title: 'Painters Allambie Heights | House Painting Since 2008 | Working Colours',
     description: "Painter Allambie Heights — interior and exterior repaints, timber staining, deck staining. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/allambie-heights',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Allambie Heights | Working Colours Painting Services',
+    title: 'Painters Allambie Heights | House Painting Since 2008 | Working Colours',
     description: "Painter Allambie Heights — interior and exterior repaints, timber staining, deck staining. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Allambie Heights",
+      "name": "Painters in Allambie Heights",
       "item": "https://www.wcpainting.com.au/painters/allambie-heights"
     }
   ]
@@ -80,7 +80,7 @@ export default function AllambiHeightsPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Allambie Heights
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Allambie Heights</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Allambie Heights</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Allambie Heights is a leafy, elevated suburb with well-established homes and a quiet residential character. We paint houses throughout the area — interiors, exteriors, timber features — and take the same care here as anywhere else on the Northern Beaches.
           </p>

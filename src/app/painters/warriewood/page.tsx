@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Warriewood | Working Colours Painting Services',
+  title: 'Painters Warriewood | House Painting Since 2008 | Working Colours',
   description: "Painter Warriewood — interior, exterior, and timber work for modern family homes and townhouses. 18 years Northern Beaches experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/warriewood',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Warriewood | Working Colours Painting Services',
+    title: 'Painters Warriewood | House Painting Since 2008 | Working Colours',
     description: "Painter Warriewood — interior, exterior, and timber work for modern family homes and townhouses. 18 years Northern Beaches experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/warriewood',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Warriewood | Working Colours Painting Services',
+    title: 'Painters Warriewood | House Painting Since 2008 | Working Colours',
     description: "Painter Warriewood — interior, exterior, and timber work for modern family homes and townhouses. 18 years Northern Beaches experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Warriewood",
+      "name": "Painters in Warriewood",
       "item": "https://www.wcpainting.com.au/painters/warriewood"
     }
   ]
@@ -82,7 +82,7 @@ export default function WarriewoodPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Warriewood
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Warriewood</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Warriewood</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Warriewood is one of the Northern Beaches&apos; newer residential precincts — a mix of estate homes, townhouses, and family-oriented development built over the past two decades. Fresh, modern, and well-maintained. We work throughout Warriewood and the surrounding area.
           </p>
@@ -112,7 +112,7 @@ export default function WarriewoodPage() {
                 'Full and partial residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}

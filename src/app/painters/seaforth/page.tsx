@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Seaforth | Working Colours Painting Services',
+  title: 'Painters Seaforth | House Painting Since 2008 | Working Colours',
   description: "Painter Seaforth — interior, exterior, timber and deck work for Seaforth family homes and harbour-view properties. 18 years experience. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/seaforth',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Seaforth | Working Colours Painting Services',
+    title: 'Painters Seaforth | House Painting Since 2008 | Working Colours',
     description: "Painter Seaforth — interior, exterior, timber and deck work for Seaforth family homes and harbour-view properties. 18 years experience. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/seaforth',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Seaforth | Working Colours Painting Services',
+    title: 'Painters Seaforth | House Painting Since 2008 | Working Colours',
     description: "Painter Seaforth — interior, exterior, timber and deck work for Seaforth family homes and harbour-view properties. 18 years experience. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Seaforth",
+      "name": "Painters in Seaforth",
       "item": "https://www.wcpainting.com.au/painters/seaforth"
     }
   ]
@@ -82,7 +82,7 @@ export default function SeaforthPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Seaforth
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Seaforth</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Seaforth</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Seaforth sits between Middle Harbour and bushland reserves — a suburb of family homes, harbour views, and varied architecture spread across hillside terrain. Homes here are often multi-level, with significant timber elements and the kind of character that rewards proper maintenance.
           </p>
@@ -112,7 +112,7 @@ export default function SeaforthPage() {
                 'Doors, trims, and window frames',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}

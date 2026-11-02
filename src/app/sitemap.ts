@@ -2,7 +2,12 @@ import { MetadataRoute } from 'next';
 
 const BASE = 'https://www.wcpainting.com.au';
 
-const services = [
+// Lists are exported so src/app/sitemap.test.ts can check them against the
+// actual route folders — a new page that isn't added here fails the tests.
+// lastModified is deliberately omitted: stamping every URL with the build
+// time tells Google every page changed on every deploy, so it learns to
+// ignore the field. Add real per-page dates here if they're ever tracked.
+export const services = [
   'interior-painting',
   'exterior-painting',
   'timber-staining',
@@ -11,7 +16,7 @@ const services = [
   'residential-repaints',
 ];
 
-const areas = [
+export const areas = [
   'northern-beaches',
   'dee-why',
   'narrabeen',
@@ -45,7 +50,7 @@ const areas = [
   'terrey-hills',
 ];
 
-const blogPosts = [
+export const blogPosts = [
   'how-much-does-it-cost-to-paint-a-house-sydney',
   'best-exterior-paint-coastal-homes-sydney',
   'how-often-repaint-house-sydney',
@@ -69,32 +74,27 @@ const blogPosts = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const core: MetadataRoute.Sitemap = [
-    { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: BASE, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE}/about`, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/contact`, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/blog`, changeFrequency: 'weekly', priority: 0.7 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((slug) => ({
     url: `${BASE}/services/${slug}`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
 
   const areaPages: MetadataRoute.Sitemap = areas.map((slug) => ({
     url: `${BASE}/painters/${slug}`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((slug) => ({
     url: `${BASE}/blog/${slug}`,
-    lastModified: now,
     changeFrequency: 'yearly',
     priority: 0.7,
   }));

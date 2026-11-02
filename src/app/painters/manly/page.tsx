@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Manly | Working Colours Painting Services',
+  title: 'Painters Manly | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Manly — Working Colours. Heritage homes, federation bungalows, pre-sale repaints. Northern Beaches specialists. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Manly | Working Colours Painting Services',
+    title: 'Painters Manly | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Manly — Working Colours. Heritage homes, federation bungalows, pre-sale repaints. Northern Beaches specialists. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/manly',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Manly | Working Colours Painting Services',
+    title: 'Painters Manly | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Manly — Working Colours. Heritage homes, federation bungalows, pre-sale repaints. Northern Beaches specialists. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Manly",
+      "name": "Painters in Manly",
       "item": "https://www.wcpainting.com.au/painters/manly"
     }
   ]
@@ -83,7 +83,7 @@ export default function ManlyPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Manly
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Manly</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Manly</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Manly is home to some of the most beautiful and characterful properties on the Northern Beaches — federation bungalows, art deco homes, and terraces with real heritage value. These homes deserve painters who understand what they&apos;re working with.
           </p>
@@ -141,6 +141,7 @@ export default function ManlyPage() {
             <Link href="/painters/freshwater" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Freshwater</Link>
             <Link href="/painters/balgowlah" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Balgowlah</Link>
             <Link href="/painters/seaforth" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Seaforth</Link>
+            <Link href="/painters/manly-vale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Manly Vale</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
           </div>
         </div>

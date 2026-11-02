@@ -4,14 +4,14 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Manly Vale | Working Colours Painting Services',
+  title: 'Painters Manly Vale | House Painting Since 2008 | Working Colours',
   description: "Painter Manly Vale — interior and exterior repaints, timber staining, pre-sale preparation. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
   alternates: {
     canonical: 'https://www.wcpainting.com.au/painters/manly-vale',
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Manly Vale | Working Colours Painting Services',
+    title: 'Painters Manly Vale | House Painting Since 2008 | Working Colours',
     description: "Painter Manly Vale — interior and exterior repaints, timber staining, pre-sale preparation. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/manly-vale',
     siteName: 'Working Colours Painting Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Manly Vale | Working Colours Painting Services',
+    title: 'Painters Manly Vale | House Painting Since 2008 | Working Colours',
     description: "Painter Manly Vale — interior and exterior repaints, timber staining, pre-sale preparation. 18 years Northern Beaches experience. Free quote. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
   },
@@ -65,7 +65,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Manly Vale",
+      "name": "Painters in Manly Vale",
       "item": "https://www.wcpainting.com.au/painters/manly-vale"
     }
   ]
@@ -80,7 +80,7 @@ export default function ManlyValePage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Manly Vale
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Manly Vale</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Manly Vale</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Manly Vale is a well-established residential suburb with a strong community feel and solid housing stock. Whether you&apos;re refreshing the interior, repainting the exterior, or getting the home ready to sell — we can help.
           </p>

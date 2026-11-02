@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Avalon | Working Colours Painting Services',
+  title: 'Painters Avalon | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Avalon — Working Colours. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Avalon | Working Colours Painting Services',
+    title: 'Painters Avalon | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Avalon — Working Colours. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/avalon',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Avalon | Working Colours Painting Services',
+    title: 'Painters Avalon | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Avalon — Working Colours. Interior, exterior, timber staining and deck work for Avalon's character homes and renovations. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Avalon",
+      "name": "Painters in Avalon Beach",
       "item": "https://www.wcpainting.com.au/painters/avalon"
     }
   ]
@@ -85,7 +85,7 @@ export default function AvalonPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Avalon Beach
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Avalon Beach</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Avalon Beach</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Avalon Beach has a character all of its own — older homes on generous blocks, a strong renovation culture, and a village feel that homeowners take pride in maintaining. We paint homes here regularly, and we understand what these properties need.
           </p>
@@ -115,7 +115,7 @@ export default function AvalonPage() {
                 'Residential repaints — full or staged',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -142,6 +142,7 @@ export default function AvalonPage() {
             <Link href="/painters/palm-beach" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Palm Beach</Link>
             <Link href="/painters/newport" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Newport</Link>
             <Link href="/painters/bayview" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Bayview</Link>
+            <Link href="/painters/bilgola" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Bilgola</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
             <Link href="/services/interior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Interior Painting</Link>
             <Link href="/services/exterior-painting" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-colors">Exterior Painting</Link>

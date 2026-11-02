@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Newport | Working Colours Painting Services',
+  title: 'Painters Newport | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Newport — Working Colours. Prestige homes, timber restoration, exterior repaints. Northern Beaches specialists. Call 0434 030 222 for a free quote.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Newport | Working Colours Painting Services',
+    title: 'Painters Newport | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Newport — Working Colours. Prestige homes, timber restoration, exterior repaints. Northern Beaches specialists. Call 0434 030 222 for a free quote.",
     url: 'https://www.wcpainting.com.au/painters/newport',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Newport | Working Colours Painting Services',
+    title: 'Painters Newport | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Newport — Working Colours. Prestige homes, timber restoration, exterior repaints. Northern Beaches specialists. Call 0434 030 222 for a free quote.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Newport",
+      "name": "Painters in Newport",
       "item": "https://www.wcpainting.com.au/painters/newport"
     }
   ]
@@ -83,7 +83,7 @@ export default function NewportPage() {
           <div className="text-blue-300 text-sm font-medium mb-3">
             <Link href="/" className="hover:underline">Home</Link> &rsaquo; <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo; Newport
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Newport</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Newport</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Newport is a prestigious coastal village with a strong mix of character homes, renovated cottages, and prestige properties. Many homes feature significant timber elements — weatherboard cladding, decks, and pergolas — that face direct beachfront salt exposure.
           </p>
@@ -141,6 +141,7 @@ export default function NewportPage() {
             <Link href="/painters/mona-vale" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Mona Vale</Link>
             <Link href="/painters/avalon" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Avalon</Link>
             <Link href="/painters/bayview" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Bayview</Link>
+            <Link href="/painters/bilgola" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Bilgola</Link>
             <Link href="/painters/northern-beaches" className="bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">All Northern Beaches</Link>
           </div>
         </div>

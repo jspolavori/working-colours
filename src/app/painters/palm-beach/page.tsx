@@ -4,7 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Painter Palm Beach | Working Colours Painting Services',
+  title: 'Painters Palm Beach | House Painting Since 2008 | Working Colours',
   description:
     "Painter in Palm Beach — Working Colours. Exterior, interior, timber and deck work for prestige coastal homes. Local Northern Beaches team. Call 0434 030 222.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Painter Palm Beach | Working Colours Painting Services',
+    title: 'Painters Palm Beach | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Palm Beach — Working Colours. Exterior, interior, timber and deck work for prestige coastal homes. Local Northern Beaches team. Call 0434 030 222.",
     url: 'https://www.wcpainting.com.au/painters/palm-beach',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Painter Palm Beach | Working Colours Painting Services',
+    title: 'Painters Palm Beach | House Painting Since 2008 | Working Colours',
     description:
       "Painter in Palm Beach — Working Colours. Exterior, interior, timber and deck work for prestige coastal homes. Local Northern Beaches team. Call 0434 030 222.",
     images: ['https://www.wcpainting.com.au/og-image.jpg'],
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Painter Palm Beach",
+      "name": "Painters in Palm Beach",
       "item": "https://www.wcpainting.com.au/painters/palm-beach"
     }
   ]
@@ -85,7 +85,7 @@ export default function PalmBeachPage() {
             <Link href="/painters/northern-beaches" className="hover:underline">Northern Beaches</Link> &rsaquo;{' '}
             Palm Beach
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painter Palm Beach</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Painters in Palm Beach</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
             Palm Beach sits at the tip of the Northern Beaches peninsula — one of Sydney&apos;s most iconic and exposed coastal locations. Homes here range from original beach shacks to prestige multi-level properties. The environment is demanding. The standard of work needs to match.
           </p>
@@ -115,7 +115,7 @@ export default function PalmBeachPage() {
                 'Pre-sale painting and full residential repaints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width={20} height={20} className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
